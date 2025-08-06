@@ -12,7 +12,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #1A202C; /* Nuevo fondo solicitado */
+            background-color: #1A202C;
             color: #E2E8F0;
         }
         .chart-container {
@@ -31,7 +31,7 @@
             }
         }
         .card {
-            background-color: #2D3748; /* Tarjeta más oscura para contraste */
+            background-color: #2D3748;
             border-radius: 0.75rem;
             padding: 2rem;
             border: 1px solid #4A5568;
@@ -58,6 +58,16 @@
             text-align: center;
             margin: 0.5rem 0;
         }
+        .step-image-container {
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+        }
+        .step-image {
+            height: auto;
+            border-radius: 0.5rem;
+            border: 1px solid #4A5568;
+        }
     </style>
 </head>
 <body class="text-gray-200">
@@ -66,18 +76,9 @@
 
         <header class="text-center mb-16 flex flex-col items-center">
             
-            <!-- INICIO: Espacio para el logo de la empresa -->
-            <div class="flex justify-center mb-1 mt-4">
-                <!-- 
-                    INSTRUCCIONES:
-                    1. Reemplaza la URL en 'src' con la de tu logo.
-                    2. Ajusta el tamaño cambiando la clase 'w-56'.
-                       - Para hacerlo más pequeño, usa: w-40, w-48.
-                       - Para hacerlo más grande, usa: w-64, w-72.
-                -->
-                <img src="logo.png" alt="Logo de la Empresa" class="w-64 h-auto" onerror="this.onerror=null;this.style.display='none'">
+            <div class="flex justify-center mb-8 mt-4">
+                <img src="logo.png" alt="Logo de la Empresa" class="w-56 h-auto" onerror="this.onerror=null;this.style.display='none'">
             </div>
-            <!-- FIN: Espacio para el logo de la empresa -->
             
             <h1 class="text-4xl md:text-5xl font-black text-white mb-2">¿Cuál es la IP de mi equipo?</h1>
             <p class="text-lg text-blue-300 max-w-2xl mx-auto">Una guía visual para encontrar el identificador de tu equipo en la red.</p>
@@ -87,12 +88,30 @@
             <div class="card">
                 <h2 class="text-2xl font-bold text-white mb-4">Opción 1: Método Rápido (con teclado)</h2>
                 <p class="text-gray-400 mb-6">Para ir al grano. Esta es la forma más directa.</p>
-                <div class="space-y-4">
+                <div class="space-y-2">
                     <div class="flow-step">Presiona <kbd class="font-sans bg-gray-300 text-gray-900 p-1 rounded shadow">Win</kbd> + <kbd class="font-sans bg-gray-300 text-gray-900 p-1 rounded shadow">R</kbd></div>
+                    
+                    <div class="step-image-container">
+                        <!-- Para cambiar el tamaño, modifica el número en 'width: 300px;' -->
+                        <img src="paso1.png" alt="Ventana Ejecutar" class="step-image" style="width: 300px;">
+                    </div>
+
                     <div class="flow-arrow">&darr;</div>
                     <div class="flow-step">Escribe <code class="bg-black text-white px-2 py-1 rounded">cmd</code> y presiona Enter</div>
+
+                    <div class="step-image-container">
+                        <!-- Para cambiar el tamaño, modifica el número en 'width: 300px;' -->
+                        <img src="cmd.png" alt="Consola CMD" class="step-image" style="width: 300px;">
+                    </div>
+
                     <div class="flow-arrow">&darr;</div>
                     <div class="flow-step">Escribe <code class="bg-black text-white px-2 py-1 rounded">ipconfig</code> y presiona Enter</div>
+
+                    <div class="step-image-container">
+                        <!-- Para cambiar el tamaño, modifica el número en 'width: 300px;' -->
+                        <img src="config.png" alt="Resultado de ipconfig" class="step-image" style="width: 300px;">
+                    </div>
+
                     <div class="flow-arrow">&darr;</div>
                     <div class="flow-step">Busca tu <span class="text-blue-300 font-bold">Dirección IPv4</span></div>
                 </div>
@@ -100,12 +119,30 @@
             <div class="card">
                 <h2 class="text-2xl font-bold text-white mb-4">Opción 2: Método Visual (con menús)</h2>
                 <p class="text-gray-400 mb-6">Si prefieres usar el ratón y las ventanas de Windows.</p>
-                 <div class="space-y-4">
+                 <div class="space-y-2">
                     <div class="flow-step">Ve a <span class="text-blue-300">Configuración</span> &gt; <span class="text-blue-300">Red e Internet</span></div>
+
+                    <div class="step-image-container">
+                        <!-- Para cambiar el tamaño, modifica el número en 'width: 300px;' -->
+                        <img src="conf.png" alt="Ventana de Configuración" class="step-image" style="width: 300px;">
+                    </div>
+
                     <div class="flow-arrow">&darr;</div>
                     <div class="flow-step">Selecciona <span class="text-blue-300">Wi-Fi</span> o <span class="text-blue-300">Ethernet</span></div>
+
+                    <div class="step-image-container">
+                        <!-- Para cambiar el tamaño, modifica el número en 'width: 300px;' -->
+                        <img src="red.png" alt="Sección Red e Internet" class="step-image" style="width: 300px;">
+                    </div>
+
                     <div class="flow-arrow">&darr;</div>
                     <div class="flow-step">Haz clic en <span class="text-blue-300">Propiedades</span> de tu red</div>
+
+                    <div class="step-image-container">
+                        <!-- Para cambiar el tamaño, modifica el número en 'width: 300px;' -->
+                        <img src="wi.png" alt="Ventana de Propiedades" class="step-image" style="width: 300px;">
+                    </div>
+
                     <div class="flow-arrow">&darr;</div>
                     <div class="flow-step">Encuentra tu <span class="text-blue-300 font-bold">Dirección IPv4</span></div>
                 </div>

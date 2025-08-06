@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía para Gestionar Contraseñas Guardadas</title>
+    
+    <!-- Tailwind CSS para estilos rápidos y responsivos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts para una tipografía limpia -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Usamos la fuente Inter como base para todo el documento */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-[#1A202C] text-gray-300 antialiased">
+
+    <!-- Contenedor principal -->
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+
+        <!-- INICIO: Espacio para el logo de la empresa -->
+        <div class="flex justify-center mb-6 mt-4">
+            <!--
+                INSTRUCCIONES:
+                1. Reemplaza la URL en 'src' con la de tu logo.
+                   He puesto un logo de ejemplo para que veas cómo se ve.
+                2. Ajusta el tamaño cambiando la clase 'w-56'.
+                   - Para hacerlo más pequeño, usa: w-40, w-48.
+                   - Para hacerlo más grande, usa: w-64, w-72.
+            -->
+            <img src="logo.png" alt="Logo de la Empresa" class="w-56 h-auto">
+        </div>
+        <!-- FIN: Espacio para el logo de la empresa -->
+
+        <!-- Título y descripción -->
+        <div class="text-center mb-12">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">Guía para Revisar y Gestionar tus Contraseñas</h1>
+            <p class="max-w-3xl mx-auto text-lg text-gray-400">
+                Aprende a encontrar, eliminar y deshabilitar el guardado de contraseñas en tus navegadores para mantener tu información segura.
+            </p>
+        </div>
+
+        <!-- SECCIÓN 1: CÓMO VER TUS CONTRASEÑAS GUARDADAS -->
+        <h2 class="text-2xl font-bold text-center text-white mb-8">Cómo Ver tus Contraseñas Guardadas</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Tarjeta para Google Chrome -->
+            <div class="bg-gray-800 rounded-xl p-6 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <div class="flex items-center mb-4">
+                    <svg class="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.9992 12C20.9992 16.9706 16.9706 21 11.9992 21C7.02866 21 2.99921 16.9706 2.99921 12C2.99921 7.02944 7.02866 3 11.9992 3C13.8136 3 15.511 3.54734 16.9056 4.48281L17.4299 4.86982L17.0938 5.43209C16.0358 7.23414 16.3248 9.60413 17.8239 10.9821L17.9062 11.058L16.9992 11H11.9992C9.23781 11 6.99921 13.2386 6.99921 16C6.99921 16.2713 7.03933 16.5367 7.11475 16.7915L7.13078 16.8419L6.8689 17.1301C5.6696 18.4443 5.78055 20.5 7.03153 21.8893L7.1107 21.9685L7.51855 21.5606C8.82739 20.2518 10.9327 20.0075 12.4814 21.0315L12.5186 21.0547L13.0008 20.5725C14.4273 19.146 14.8632 17.0673 14.0171 15.2085L13.9562 15.073L14.4275 14.7919C15.4613 14.1662 16.6938 14.0142 17.8239 14.3851L17.9062 14.412L18.1581 13.8419C18.6632 12.6684 19.6056 11.7518 20.7315 11.2185L20.9992 11.1047V12Z" fill="#4285F4"></path><path d="M12 11C9.23858 11 7 13.2386 7 16C7 16.2713 7.03933 16.5367 7.11475 16.7915C5.78055 15.5 5.6696 13.4443 6.8689 12.1301L12 11Z" fill="#34A853"></path><path d="M14.0171 15.2085C14.8632 17.0673 14.4273 19.146 13.0008 20.5725L7.51855 15.0903C8.82739 13.7814 10.9327 13.5372 12.4814 14.5612L14.0171 15.2085Z" fill="#FBBC05"></path><path d="M17.8239 10.9821C16.3248 9.60413 16.0358 7.23414 17.0938 5.43209L11.9992 3C7.02866 3 2.99921 7.02944 2.99921 12C2.99921 16.9706 7.02866 21 11.9992 21C13.8136 21 15.511 20.4527 16.9056 19.5172L17.8239 10.9821Z" fill="#EA4335"></path></svg>
+                    <h2 class="text-xl font-bold text-white">Google Chrome</h2>
+                </div>
+                <ol class="list-decimal list-inside space-y-3 text-gray-300">
+                    <li>Abre Chrome y haz clic en los tres puntos <span class="font-bold text-white">(⋮)</span>.</li>
+                    <li>Selecciona <span class="font-bold text-white">"Configuración"</span>.</li>
+                    <li>Ve a <span class="font-bold text-white">"Autocompletar y contraseñas"</span> y elige <span class="font-bold text-white">"Gestor de contraseñas de Google"</span>.</li>
+                    <li>Aquí verás todas tus contraseñas.</li>
+                </ol>
+            </div>
+            <!-- Tarjeta para Mozilla Firefox -->
+            <div class="bg-gray-800 rounded-xl p-6 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <div class="flex items-center mb-4">
+                    <svg class="w-8 h-8 mr-3" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="48" fill="#FF9500"/><path d="M50,2a48,48,0,0,0-28.5,86.5c1.4-1.8,2.8-3.6,4.1-5.5a30,30,0,0,1,48.8,0c1.3,1.9,2.7,3.7,4.1,5.5A48,48,0,0,0,50,2Z" fill="#FFF"/><path d="M50,22a28,28,0,0,0-23.5,43.5c1.4-1.8,2.8-3.6,4.1-5.5a15,15,0,0,1,23.8,0c1.3,1.9,2.7,3.7,4.1,5.5A28,28,0,0,0,50,22Z" fill="#00539F"/><path d="M68.5,45.5a18.5,18.5,0,0,0-37,0c0,10.2,8.3,18.5,18.5,18.5S68.5,55.7,68.5,45.5Z" fill="#FFC90E"/></svg>
+                    <h2 class="text-xl font-bold text-white">Mozilla Firefox</h2>
+                </div>
+                <ol class="list-decimal list-inside space-y-3 text-gray-300">
+                    <li>Abre Firefox y haz clic en las tres líneas <span class="font-bold text-white">(☰)</span>.</li>
+                    <li>Busca y selecciona la opción <span class="font-bold text-white">"Contraseñas"</span>.</li>
+                    <li>Desde esta pantalla, podrás ver y administrar todo.</li>
+                </ol>
+            </div>
+            <!-- Tarjeta para Microsoft Edge -->
+            <div class="bg-gray-800 rounded-xl p-6 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <div class="flex items-center mb-4">
+                    <svg class="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z" fill="#0078D7"/><path d="M12 6C8.69 6 6 8.69 6 12C6 15.31 8.69 18 12 18C13.36 18 14.62 17.55 15.68 16.82L12 12V6Z" fill="#0078D7"/></svg>
+                    <h2 class="text-xl font-bold text-white">Microsoft Edge</h2>
+                </div>
+                <ol class="list-decimal list-inside space-y-3 text-gray-300">
+                    <li>Abre Edge y haz clic en los tres puntos <span class="font-bold text-white">(…)</span>.</li>
+                    <li>Ve a <span class="font-bold text-white">"Configuración"</span> > <span class="font-bold text-white">"Perfiles"</span> > <span class="font-bold text-white">"Contraseñas"</span>.</li>
+                    <li>Aquí encontrarás la lista de tus contraseñas.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 2: CÓMO DESHABILITAR EL GUARDADO DE CONTRASEÑAS -->
+        <div class="mt-16">
+            <h2 class="text-2xl font-bold text-center text-white mb-8">Cómo Evitar que el Navegador Guarde Contraseñas</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tarjeta para deshabilitar en Chrome -->
+                <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+                    <h3 class="text-xl font-bold text-white mb-4">En Google Chrome</h3>
+                    <ol class="list-decimal list-inside space-y-3 text-gray-300">
+                        <li>Sigue los pasos anteriores para llegar al <span class="font-bold text-white">"Gestor de contraseñas"</span>.</li>
+                        <li>En el menú de la izquierda, haz clic en <span class="font-bold text-white">"Configuración"</span> (un ícono de engrane).</li>
+                        <li>Busca la opción <span class="font-bold text-white">"Preguntar si quiero guardar contraseñas"</span> y apaga el interruptor.</li>
+                    </ol>
+                </div>
+                <!-- Tarjeta para deshabilitar en Firefox -->
+                <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+                    <h3 class="text-xl font-bold text-white mb-4">En Mozilla Firefox</h3>
+                    <ol class="list-decimal list-inside space-y-3 text-gray-300">
+                        <li>Haz clic en las tres líneas (☰) y ve a <span class="font-bold text-white">"Ajustes"</span>.</li>
+                        <li>Selecciona <span class="font-bold text-white">"Privacidad y seguridad"</span> en el menú de la izquierda.</li>
+                        <li>Busca la sección <span class="font-bold text-white">"Usuarios y contraseñas"</span>.</li>
+                        <li>Desmarca la casilla <span class="font-bold text-white">"Preguntar para guardar inicios de sesión y contraseñas"</span>.</li>
+                    </ol>
+                </div>
+                <!-- Tarjeta para deshabilitar en Edge -->
+                <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+                    <h3 class="text-xl font-bold text-white mb-4">En Microsoft Edge</h3>
+                    <ol class="list-decimal list-inside space-y-3 text-gray-300">
+                        <li>Sigue los pasos anteriores para llegar a la sección de <span class="font-bold text-white">"Contraseñas"</span>.</li>
+                        <li>Busca la opción <span class="font-bold text-white">"Ofrecer la posibilidad de guardar contraseñas"</span>.</li>
+                        <li>Haz clic en el interruptor para desactivarla.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nota de seguridad -->
+        <div class="mt-16 text-center max-w-3xl mx-auto">
+            <h3 class="text-xl font-semibold text-white mb-3">¡Un consejo de seguridad!</h3>
+            <p class="text-gray-400">
+                Es una buena práctica revisar estas contraseñas de vez en cuando y eliminar las que pertenezcan a sitios que ya no usas. ¡Mantener tu información segura es muy importante!
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Detallada de Seguridad para Equipos Windows</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] .arrow {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body class="bg-[#1A202C] text-gray-200 antialiased">
+
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+
+        <!-- INICIO: Espacio para el logo de la empresa -->
+        <div class="flex justify-center mb-1 mt-4">
+            <img src="logo.png" alt="Logo de la Empresa" class="w-56 h-auto" onerror="this.onerror=null;this.src='https://placehold.co/224x80/1A202C/FFFFFF?text=Logo+no+encontrado';">
+        </div>
+        <!-- FIN: Espacio para el logo de la empresa -->
+
+        <header class="text-center my-8">
+            <h1 class="text-4xl font-bold text-white mb-2">Guía Detallada de Seguridad para tu Equipo</h1>
+            <p class="text-lg text-gray-400">Explora y entiende las reglas de seguridad de tu computadora con estos métodos.</p>
+        </header>
+
+        <main class="space-y-6">
+
+            <!-- Método 1: Visor de Directivas de Seguridad (Recomendado) -->
+            <details class="bg-[#2D3748] rounded-xl shadow-lg overflow-hidden group">
+                <summary class="flex items-center justify-between p-6 cursor-pointer">
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-400 mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                        <div>
+                            <h2 class="text-xl font-semibold text-white">Método 1: Visor de Directivas de Seguridad (Recomendado)</h2>
+                            <p class="text-sm text-gray-400">La forma más visual y segura de consultar las políticas.</p>
+                        </div>
+                    </div>
+                    <svg class="h-6 w-6 text-gray-400 transform transition-transform duration-300 arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                </summary>
+                <div class="p-6 pt-0">
+                    <div class="border-t border-gray-700 pt-6">
+                        <p class="mb-6">Esta herramienta te muestra las reglas de seguridad de forma organizada. Solo necesitas permisos de administrador local para usarla.</p>
+                        <ol class="space-y-4 list-decimal list-inside text-gray-300 mb-8">
+                            <li>Presiona las teclas <kbd class="bg-gray-900 text-blue-300 px-2 py-1 rounded-md text-sm font-mono">Windows</kbd> + <kbd class="bg-gray-900 text-blue-300 px-2 py-1 rounded-md text-sm font-mono">R</kbd>.</li>
+                            <li>Escribe <code class="bg-gray-900 text-green-300 px-2 py-1 rounded-md text-sm">secpol.msc</code> y presiona Enter.</li>
+                            <li>En el panel izquierdo, ve a <span class="font-semibold text-white">"Configuración de seguridad" > "Directivas de cuenta"</span>.</li>
+                        </ol>
+
+                        <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
+                            <h4 class="font-bold text-lg text-blue-300 mb-3">¿Qué significa cada política?</h4>
+                            <ul class="space-y-4 text-gray-300">
+                                <li><strong>Umbral de bloqueo de cuenta:</strong> Es como tu tarjeta del banco. Si pones mal el PIN varias veces, se bloquea. Aquí se define cuántos intentos de contraseña fallidos se permiten antes de bloquear tu usuario.</li>
+                                <li><strong>Duración del bloqueo de cuenta:</strong> El "tiempo de castigo" en minutos que tu cuenta permanecerá inaccesible después de bloquearse.</li>
+                                <li><strong>Vigencia máxima de la contraseña:</strong> La fecha de caducidad de tu contraseña. Obliga a cambiarla cada cierto tiempo (ej. 90 días) para mantener la seguridad, como cambiar la cerradura de casa periódicamente.</li>
+                                <li><strong>Longitud mínima de la contraseña:</strong> El tamaño mínimo de tu contraseña. Una contraseña más larga es como una puerta con más cerrojos, mucho más difícil de forzar.</li>
+                                <li><strong>La contraseña debe cumplir requisitos de complejidad:</strong> Exige que tu contraseña sea una mezcla de <span class="text-green-400">mayúsculas</span>, <span class="text-green-400">minúsculas</span>, <span class="text-green-400">números</span> y <span class="text-green-400">símbolos</span> (!@#$). Esto la hace exponencialmente más segura.</li>
+                                <li><strong>Almacenar contraseñas con cifrado reversible:</strong> Una opción peligrosa que guarda tu contraseña de una forma fácil de descifrar. Por seguridad, <strong class="text-red-400">siempre debe estar deshabilitada</strong>.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <!-- Método 2: Símbolo del sistema (Nivel Intermedio) -->
+            <details class="bg-[#2D3748] rounded-xl shadow-lg overflow-hidden group">
+                <summary class="flex items-center justify-between p-6 cursor-pointer">
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-400 mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                        <div>
+                            <h2 class="text-xl font-semibold text-white">Método 2: Símbolo del sistema (Nivel Intermedio)</h2>
+                            <p class="text-sm text-gray-400">Exporta toda la configuración a un archivo de texto.</p>
+                        </div>
+                    </div>
+                    <svg class="h-6 w-6 text-gray-400 transform transition-transform duration-300 arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                </summary>
+                <div class="p-6 pt-0">
+                    <div class="border-t border-gray-700 pt-6">
+                        <p class="mb-6">Si prefieres ver toda la información de golpe o guardarla, puedes usar un simple comando para crear un informe.</p>
+                        <ol class="space-y-4 list-decimal list-inside text-gray-300 mb-8">
+                            <li>Busca "cmd" o "Símbolo del sistema" en el menú de inicio, haz clic derecho y selecciona <span class="font-semibold text-white">"Ejecutar como administrador"</span>.</li>
+                            <li>Copia y pega el siguiente comando y presiona Enter:
+                                <div class="bg-gray-900 p-3 rounded-md my-2">
+                                    <code class="text-green-300 font-mono">secedit /export /cfg C:\configuracion_seguridad.txt</code>
+                                </div>
+                            </li>
+                            <li>Esto creará un archivo llamado <span class="font-semibold text-white">configuracion_seguridad.txt</span> en tu disco C:.</li>
+                            <li>Abre el archivo con el Bloc de notas para ver todas las políticas de seguridad de tu equipo en formato de texto. Busca líneas como <code class="text-sm">PasswordComplexity</code> o <code class="text-sm">MinimumPasswordLength</code>.</li>
+                        </ol>
+                    </div>
+                </div>
+            </details>
+
+            <!-- Método 3: Editor del Registro (Avanzado) -->
+            <details class="bg-[#2D3748] rounded-xl shadow-lg overflow-hidden group">
+                <summary class="flex items-center justify-between p-6 cursor-pointer">
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red-400 mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                        <div>
+                            <h2 class="text-xl font-semibold text-white">Método 3: Editor del Registro (Nivel Avanzado)</h2>
+                            <p class="text-sm text-gray-400">Para usuarios expertos. Un cambio incorrecto aquí puede dañar el sistema.</p>
+                        </div>
+                    </div>
+                    <svg class="h-6 w-6 text-gray-400 transform transition-transform duration-300 arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                </summary>
+                <div class="p-6 pt-0">
+                    <div class="border-t border-gray-700 pt-6">
+                        <div class="bg-red-900/30 border border-red-500 text-red-300 p-4 rounded-lg mb-6">
+                            <strong class="font-bold">¡ADVERTENCIA!</strong> El Editor del Registro es el "corazón" de Windows. Modificarlo sin saber lo que haces puede causar errores graves en el sistema operativo. Procede con extrema precaución y solo para consultar.
+                        </div>
+                        <p class="mb-6">Las políticas de cuenta suelen ser controladas por directivas de grupo, por lo que no siempre se reflejan aquí de forma simple. Sin embargo, puedes consultar otras configuraciones relacionadas.</p>
+                        <ol class="space-y-4 list-decimal list-inside text-gray-300">
+                            <li>Presiona <kbd class="bg-gray-900 text-blue-300 px-2 py-1 rounded-md text-sm font-mono">Windows</kbd> + <kbd class="bg-gray-900 text-blue-300 px-2 py-1 rounded-md text-sm font-mono">R</kbd>.</li>
+                            <li>Escribe <code class="bg-gray-900 text-green-300 px-2 py-1 rounded-md text-sm">regedit</code> y presiona Enter.</li>
+                            <li>Navega con cuidado por las carpetas del panel izquierdo. La mayoría de las políticas de dominio no son visibles aquí, pero puedes encontrar configuraciones locales en rutas como:
+                                <div class="bg-gray-900 p-3 rounded-md my-2 text-sm">
+                                    <code class="text-green-300 font-mono">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon</code>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </details>
+
+        </main>
+
+        <footer class="text-center mt-10 text-gray-500 text-sm">
+            <p>Recuerda: esta guía es para consulta. No modifiques ninguna configuración sin la autorización del departamento de TI.</p>
+        </footer>
+
+    </div>
+    <script>
+        // Pequeño script para mejorar la accesibilidad de los detalles
+        document.querySelectorAll('details').forEach((detail) => {
+            detail.addEventListener('toggle', function() {
+                if (this.open) {
+                    this.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
