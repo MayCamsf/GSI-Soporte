@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía para Verificar tu Licencia de Microsoft Office</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 350px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 320px;
+            }
+        }
+        .flow-step {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: 1px solid #4A5568;
+            background-color: #2D3748;
+            color: #E2E8F0;
+            padding: 1rem;
+            border-radius: 0.375rem;
+            min-height: 80px;
+            transition: all 0.3s ease;
+        }
+        .flow-step:hover {
+            border-color: #4299E1;
+        }
+        .flow-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #4299E1;
+            margin: 0.5rem 0;
+            transform: rotate(90deg);
+        }
+        @media (min-width: 768px) {
+            .flow-arrow {
+                transform: rotate(0deg);
+                margin: 0 0.5rem;
+            }
+        }
+        .card {
+            background-color: #2D3748;
+            border-radius: 0.375rem;
+            border: 1px solid #4A5568;
+            padding: 1.5rem;
+        }
+        .icon-placeholder {
+            width: 64px;
+            height: 64px;
+            border: 2px solid #4299E1;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem auto;
+            color: #4299E1;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-[#1A202C] text-gray-300">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-6xl">
+
+        <!-- INICIO: Espacio para el logo de la empresa -->
+        <div class="flex justify-center mb-1 mt-4">
+            <!-- INSTRUCCIONES:
+                 1. Reemplaza la URL en 'src' con la de tu logo.
+                 2. Ajusta el tamaño cambiando la clase 'w-56'.
+                    - Para hacerlo más pequeño, usa: w-40, w-48.
+                    - Para hacerlo más grande, usa: w-64, w-72.
+            -->
+            <img src="logo.png" alt="Logo de la Empresa" class="w-64 h-auto">
+        </div>
+        <!-- FIN: Espacio para el logo de la empresa -->
+
+        <header class="text-center mb-12">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Guía para Verificar tu Licencia de Microsoft Office</h1>
+            <p class="text-lg text-gray-400">Asegura que tu Office sea original y funcione correctamente.</p>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <div class="md:col-span-2 card">
+                <h2 class="text-2xl font-bold text-[#4299E1] mb-6 text-center">Formas de Verificar tu Licencia</h2>
+                <div class="flex flex-col md:flex-row justify-around items-center">
+                    <div class="text-center p-4 max-w-xs">
+                        <div class="icon-placeholder"><span>A</span></div>
+                        <p class="mt-2 font-semibold text-lg text-white">Revisión en la Aplicación</p>
+                        <p class="text-sm text-gray-400">La forma más rápida. Revisa directamente en Word, Excel, etc.</p>
+                    </div>
+                    <div class="text-center p-4 max-w-xs">
+                        <div class="icon-placeholder"><span>P</span></div>
+                        <p class="mt-2 font-semibold text-lg text-white">Revisión en tu Cuenta Microsoft</p>
+                        <p class="text-sm text-gray-400">Para ver detalles como fechas de renovación.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="text-xl font-bold text-[#4299E1] mb-6 text-center">Procedimiento 1: Dentro de la Aplicación</h3>
+                <div class="flex flex-col md:flex-row items-center justify-center">
+                    <div class="flow-step"><span>1. Abrir Aplicación</span></div>
+                    <div class="flow-arrow"><span>›</span></div>
+                    <div class="flow-step"><span>2. Clic en Archivo > Cuenta</span></div>
+                    <div class="flow-arrow"><span>›</span></div>
+                    <div class="flow-step bg-[#4299E1] text-[#1A202C] font-bold"><span>3. Ver "Producto Activado"</span></div>
+                </div>
+                <p class="mt-6 text-center text-gray-400 text-sm">Sigue estos 3 sencillos pasos para confirmar que tu licencia está activa.</p>
+            </div>
+
+            <div class="card">
+                <h3 class="text-xl font-bold text-[#4299E1] mb-6 text-center">Procedimiento 2: En el Portal de Microsoft</h3>
+                 <div class="flex flex-col md:flex-row items-center justify-center">
+                    <div class="flow-step"><span>1. Entra a: account.microsoft.com</span></div>
+                    <div class="flow-arrow"><span>›</span></div>
+                    <div class="flow-step"><span>2. Inicia Sesión</span></div>
+                    <div class="flow-arrow"><span>›</span></div>
+                    <div class="flow-step bg-[#4299E1] text-[#1A202C] font-bold"><span>3. Busca "Suscripciones"</span></div>
+                </div>
+                <p class="mt-6 text-center text-gray-400 text-sm">Útil para ver las fechas de vencimiento y gestionar tu suscripción.</p>
+            </div>
+
+            <div class="md:col-span-2 card">
+                <h2 class="text-2xl font-bold text-[#4299E1] mb-4 text-center">¿De Dónde Puede Venir una Licencia Válida?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                    <div class="border border-gray-700 rounded-md p-4 text-center">
+                        <h4 class="font-bold text-lg text-white">Compra Directa</h4>
+                        <p class="text-sm text-gray-400">Adquisición a través de la tienda oficial de Microsoft.</p>
+                    </div>
+                    <div class="border border-gray-700 rounded-md p-4 text-center">
+                        <h4 class="font-bold text-lg text-white">Licencia de la Empresa</h4>
+                        <p class="text-sm text-gray-400">Asignada por la organización. Se activa con tu cuenta de trabajo.</p>
+                    </div>
+                    <div class="border border-gray-700 rounded-md p-4 text-center">
+                        <h4 class="font-bold text-lg text-white">Partner Certificado</h4>
+                        <p class="text-sm text-gray-400">Comprada a través de un socio autorizado de Microsoft.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="text-xl font-bold text-[#E53E3E] mb-4 text-center">Problemas Más Comunes</h3>
+                <p class="text-center text-gray-400 mb-4 text-sm">Estas son las causas más frecuentes si Office te pide activación.</p>
+                <div class="chart-container">
+                    <canvas id="issuesChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3 class="text-xl font-bold text-[#E53E3E] mb-4 text-center">Señales de que Algo Anda Mal</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <span class="text-xl mr-3 text-[#E53E3E]">●</span>
+                        <div>
+                            <h4 class="font-semibold text-white">No puedes editar ni guardar</h4>
+                            <p class="text-gray-400 text-sm">Los botones principales aparecen en gris y no se pueden usar.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-xl mr-3 text-[#E53E3E]">●</span>
+                        <div>
+                            <h4 class="font-semibold text-white">Avisos constantes para activar</h4>
+                            <p class="text-gray-400 text-sm">Aparece una barra o ventana pidiendo que actives el producto.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-xl mr-3 text-[#E53E3E]">●</span>
+                        <div>
+                            <h4 class="font-semibold text-white">Precio de compra muy bajo</h4>
+                            <p class="text-gray-400 text-sm">Si se adquirió de una fuente no oficial a un precio de remate, es una señal de alerta.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </main>
+
+        <footer class="text-center mt-16 pt-8 border-t border-gray-700">
+            <p class="text-gray-400">Si tienes problemas con tu licencia, contacta al equipo de Soporte Técnico (TI).</p>
+            <a href="https://www.microsoft.com/store/b/office" target="_blank" class="text-[#4299E1] font-semibold hover:underline">Portal de Microsoft para Empresas</a>
+        </footer>
+
+    </div>
+
+    <script>
+        const wrapLabel = (label, maxWidth) => {
+            if (label.length <= maxWidth) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + word).length > maxWidth) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            }
+            lines.push(currentLine.trim());
+            return lines;
+        };
+
+        const ctx = document.getElementById('issuesChart').getContext('2d');
+        const originalLabels = ['Suscripción Expirada', 'Error de Inicio de Sesión', 'Clave no Genuina', 'Conflicto de Versiones'];
+        const chartData = {
+            labels: originalLabels.map(label => wrapLabel(label, 16)),
+            datasets: [{
+                label: 'Causas de Problemas',
+                data: [55, 25, 15, 5],
+                backgroundColor: [
+                    '#4299E1', 
+                    '#2B6CB0', 
+                    '#2C5282', 
+                    '#718096'
+                ],
+                borderColor: '#2D3748',
+                borderWidth: 3,
+                hoverOffset: 4
+            }]
+        };
+
+        Chart.defaults.color = '#A0AEC0';
+        Chart.defaults.font.family = "'Inter', sans-serif";
+
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: chartData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        align: 'center',
+                        labels: {
+                            color: '#A0AEC0',
+                            boxWidth: 20,
+                            padding: 20
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = originalLabels[item.dataIndex];
+                                return label;
+                            }
+                        }
+                    }
+                },
+                cutout: '60%'
+            }
+        });
+    </script>
+</body>
+</html>
