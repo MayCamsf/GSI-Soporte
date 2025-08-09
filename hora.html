@@ -54,13 +54,13 @@
                 <h2 class="text-2xl font-bold text-white border-b-2 border-[#4FD1C5] pb-2 mb-4">Paso 1: Verificación visual de la política (GUI)</h2>
                 <p class="text-[#CBD5E0] mb-6">Este protocolo permite una rápida validación visual para determinar si la política de bloqueo de fecha y hora está aplicada correctamente en un equipo con Windows.</p>
                 <ol class="list-decimal list-inside space-y-4 text-[#E2E8F0]">
-                    <li>Acceder al menú de **Inicio** y seleccionar **Configuración** (ícono de engrane ⚙️).</li>
+                    <li>Acceder al menú de "Inicio" y seleccionar "Configuración" (ícono de engrane ⚙️).</li>
                     <img src="menu.png" alt="Captura de pantalla del ícono de configuración" class="w-full max-w-lg mx-auto rounded-lg my-4 shadow-lg">
 
-                    <li>En la ventana de Configuración, seleccionar la opción **Hora e idioma**.</li>
+                    <li>En la ventana de Configuración, seleccionar la opción "Hora e idioma".</li>
                     <img src="hora.png" alt="Captura de pantalla de la ventana de configuración" class="w-full max-w-lg mx-auto rounded-lg my-4 shadow-lg">
                     
-                    <li>En el menú lateral, verificar la sección **Fecha y hora**. Los controles en esta pantalla indicarán el estado de la política.</li>
+                    <li>En el menú lateral, verificar la sección "Fecha y hora". Los controles en esta pantalla indicarán el estado de la política.</li>
                     <img src="horas.png" alt="Captura de pantalla de los interruptores de fecha y hora" class="w-full max-w-lg mx-auto rounded-lg my-4 shadow-lg">
                 </ol>
             </div>
@@ -92,25 +92,25 @@
                     <div>
                         <h3 class="text-xl font-bold text-[#4FD1C5] mb-2">Opción 1: Símbolo del sistema (CMD)</h3>
                         <ol class="list-decimal list-inside space-y-4 text-[#E2E8F0]">
-                            <li>Presionar **Windows + R**, escribir <code class="bg-[#1A202C] px-2 py-1 rounded">cmd</code> y presionar Enter.</li>
+                            <li>Presionar "Windows + R", escribir <code class="bg-[#1A202C] px-2 py-1 rounded">cmd</code> y presionar Enter.</li>
                             <img src="cmd.png" alt="Captura de pantalla escribiendo cmd" class="w-full max-w-md mx-auto rounded-lg my-4 shadow-lg">
 
                             <li>En la terminal, ejecutar el comando: <code class="bg-[#1A202C] px-2 py-1 rounded">w32tm /query /status</code>.</li>
                             <img src="zx.png" alt="Captura de pantalla del resultado del comando" class="w-full max-w-md mx-auto rounded-lg my-4 shadow-lg">
 
-                            <li>**Analizar el resultado:** Verificar el campo "Source" (Fuente). Debe apuntar a un servidor de dominio de la empresa (ej: `dc01.empresa.local`). Si apunta a `Local CMOS Clock`, la política no está siendo aplicada.</li>
+                            <li>Analizar el resultado: Verificar el campo "Source" (Fuente). Debe apuntar a un servidor de dominio de la empresa (ej: `dc01.empresa.local`). Si apunta a `Local CMOS Clock`, la política no está siendo aplicada.</li>
                         </ol>
                     </div>
                     <div>
                         <h3 class="text-xl font-bold text-[#4FD1C5] mb-2">Opción 2: PowerShell</h3>
                         <ol class="list-decimal list-inside space-y-4 text-[#E2E8F0]">
-                            <li>Presionar **Windows + R**, escribir <code class="bg-[#1A202C] px-2 py-1 rounded">powershell</code> y presionar Enter.</li>
+                            <li>Presionar "Windows + R", escribir <code class="bg-[#1A202C] px-2 py-1 rounded">powershell</code> y presionar Enter.</li>
                             <img src="powers.png" alt="Captura de pantalla escribiendo powershell" class="w-full max-w-md mx-auto rounded-lg my-4 shadow-lg">
 
                             <li>En la terminal, ejecutar el mismo comando: <code class="bg-[#1A202C] px-2 py-1 rounded">w32tm /query /status</code>.</li>
                              <img src="zx.png" alt="Captura de pantalla del resultado del comando" class="w-full max-w-md mx-auto rounded-lg my-4 shadow-lg">
 
-                            <li>**Analizar el resultado:** La interpretación es idéntica a la de CMD. El objetivo es confirmar que la fuente de sincronización sea un controlador de dominio autorizado.</li>
+                            <li>Analizar el resultado: La interpretación es idéntica a la de CMD. El objetivo es confirmar que la fuente de sincronización sea un controlador de dominio autorizado.</li>
                         </ol>
                     </div>
                 </div>
