@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía Avanzada para Colaboradores: Uso del Equipo de Cómputo</title>
-    <!-- Inclusión de Tailwind CSS para estilos rápidos y responsivos -->
+    <title>Guía Técnica para Deshabilitar Bluetooth en Equipos Corporativos</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Inclusión de Google Fonts para una tipografía más agradable -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Se utiliza la fuente 'Inter' para todo el cuerpo del documento */
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* Estilos personalizados para mejorar la apariencia de las listas */
+        .custom-list li {
+            counter-increment: list-item;
+        }
         .custom-list li::before {
             content: counter(list-item);
-            background-color: #2DD4BF; /* Color menta para los números */
-            color: #1A202C; /* Color de fondo oscuro para el texto del número */
+            background-color: #F87171; /* Rojo claro para acciones restrictivas */
+            color: #1A202C;
             font-weight: 700;
             border-radius: 50%;
             width: 1.75rem;
@@ -44,101 +43,113 @@
 <body class="bg-[#1A202C] text-gray-300 min-h-screen p-4 sm:p-6 md:p-8">
 
     <div class="max-w-4xl mx-auto">
-        <!-- INICIO: Espacio para el logo de la empresa -->
         <div class="flex justify-center mb-6 mt-4">
-            <!-- INSTRUCCIONES: 
-                 1. Reemplaza la URL en 'src' con la de tu logo.
-                 2. Ajusta el tamaño cambiando la clase 'w-56'.
-            -->
             <img src="logo.png" 
                  alt="Logo de la Empresa" 
                  class="w-56 h-auto"
-                 onerror="this.onerror=null;this.src='https://placehold.co/224x80/1A202C/FFFFFF?text=Error+al+cargar+logo';">
+                 onerror="this.onerror=null;this.src='logo.png';">
         </div>
-        <!-- FIN: Espacio para el logo de la empresa -->
-
-        <!-- Contenedor principal de la guía -->
         <div class="bg-[#2D3748] rounded-xl shadow-2xl p-6 sm:p-8 md:p-10">
             
-            <h1 class="text-3xl sm:text-4xl font-bold text-white text-center mb-4">Guía Rápida para tu Equipo</h1>
+            <h1 class="text-3xl sm:text-4xl font-bold text-white text-center mb-4">Guía para Deshabilitar Bluetooth en Equipos</h1>
             <p class="text-center text-gray-400 mb-10 max-w-2xl mx-auto">
-                ¡Hola! Esta guía te ayudará a revisar la configuración de tu computadora y a solucionar problemas comunes de una forma sencilla.
+                Este protocolo detalla los pasos para deshabilitar y bloquear la funcionalidad de Bluetooth en los equipos, asegurando el cumplimiento de las políticas de seguridad de la empresa.
             </p>
 
-            <!-- Sección 1: Desbloqueo de Dispositivos Bluetooth (Básico) -->
             <div class="mb-8">
                 <div class="flex items-center mb-4">
-                    <svg class="w-8 h-8 text-cyan-400 mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    <h2 class="text-2xl font-semibold text-white">¿No puedes conectar tus audífonos o mouse Bluetooth?</h2>
+                    <svg class="w-8 h-8 text-red-400 mr-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 10.5c0-1.02.414-1.95.932-2.612m3.13-1.45A4.493 4.493 0 0 1 18 10.5c0 .24-.018.474-.053.702m-4.084 4.084a4.5 4.5 0 0 1-5.662-5.662m5.662 5.662L10.5 10.5" />
+                    </svg>
+                    <h2 class="text-2xl font-semibold text-white">Paso 1: Desactivación desde la Configuración del Sistema</h2>
                 </div>
-                <p class="mb-5 text-gray-400">Si tienes problemas para conectar un dispositivo, primero asegúrate de que la función esté encendida en tu equipo. Esta es la verificación inicial.</p>
+                <p class="mb-5 text-gray-400">Esta es la primera y más simple verificación y acción a realizar.</p>
                 <ol class="list-none space-y-4 custom-list" style="counter-reset: list-item;">
-                    <li class="flex items-start"><div>Ve al menú <b class="text-white">"Inicio"</b> > <b class="text-white">"Configuración"</b> > <b class="text-white">"Bluetooth y dispositivos"</b>.</div></li>
-                    <li class="flex items-start"><div>Comprueba que el interruptor de Bluetooth esté <b class="text-cyan-400">"Activado"</b>.</div></li>
+                    <li class="flex items-start"><div>Haz clic en el menú <b class="text-white">"Inicio"</b>, selecciona <b class="text-white">"Configuración"</b> y luego haz clic en <b class="text-white">"Bluetooth y dispositivos"</b>.</div></li>
+                    <img src="re.png" alt="Menú Inicio y Configuración" class="my-4 mx-auto rounded-lg max-w-full sm:max-w-md h-auto">
+                    
+                    <li class="flex items-start"><div>Localiza el interruptor "Bluetooth". Si está activado, haz clic para ponerlo en la posición de <b class="text-red-400">"Desactivado"</b>.</div></li>
+                    <img src="by.png" alt="Interruptor de Bluetooth en posición desactivado" class="my-4 mx-auto rounded-lg max-w-full sm:max-w-sm h-auto">
                 </ol>
             </div>
 
-            <!-- Divisor visual -->
             <hr class="border-gray-600 my-10">
 
-            <!-- Sección 2: Análisis Avanzado -->
             <div>
                 <div class="flex items-center mb-4">
-                     <svg class="w-8 h-8 text-teal-300 mr-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286Zm0 13.036h.008v.008H12v-.008Z" />
+                     <svg class="w-8 h-8 text-red-400 mr-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.008v.008H12v-.008Z" />
                     </svg>
-                    <h2 class="text-2xl font-semibold text-white">Análisis Avanzado: ¿Por qué sigue bloqueado?</h2>
+                    <h2 class="text-2xl font-semibold text-white">Paso 2: Métodos de Deshabilitación Permanente</h2>
                 </div>
-                <p class="mb-6 text-gray-400">Si el método anterior no funcionó o el interruptor está en gris, es probable que una política o un software lo esté controlando. Aquí te mostramos cómo investigarlo manualmente.</p>
+                <p class="mb-6 text-gray-400">Si el usuario puede reactivar el interruptor, utilice los siguientes métodos para un bloqueo a nivel de sistema.</p>
 
                 <div class="space-y-8">
-                    <!-- Método 1: Administrador de Dispositivos -->
                     <div>
-                        <h3 class="font-semibold text-teal-300 mb-3 text-lg">Método 1: Revisar el Administrador de Dispositivos</h3>
-                        <p class="mb-4 text-gray-400">Esta herramienta muestra si Windows reconoce el hardware de Bluetooth y si está habilitado a nivel de sistema.</p>
+                        <h3 class="font-semibold text-red-300 mb-3 text-lg">Método 1: Deshabilitar desde el Administrador de Dispositivos</h3>
                         <ol class="list-none space-y-4 custom-list" style="counter-reset: list-item;">
-                            <li class="flex items-start"><div>Presiona las teclas <span class="press-keys">Win</span> + <span class="press-keys">R</span>, escribe <code class="press-keys">devmgmt.msc</code> y presiona Enter.</div></li>
-                            <li class="flex items-start"><div>En la lista, busca y expande la categoría <b class="text-white">"Bluetooth"</b>.</div></li>
-                            <li class="flex items-start"><div>Haz clic derecho sobre tu adaptador de Bluetooth (ej. "Intel(R) Wireless Bluetooth(R)"). Si ves una opción que dice <b class="text-cyan-400">"Habilitar dispositivo"</b>, selecciónala. Si el dispositivo tiene una flecha hacia abajo, significa que está deshabilitado.</div></li>
+                            <li class="flex items-start"><div>Presiona <span class="press-keys">Win</span> + <span class="press-keys">R</span> para abrir la ventana "Ejecutar".</div></li>
+                            <img src="paso1.png" alt="Ventana Ejecutar" class="my-4 mx-auto rounded-lg max-w-full sm:max-w-sm h-auto">
+
+                            <li class="flex items-start"><div>Escribe <code class="press-keys">devmgmt.msc</code> y presiona "Enter" para abrir el "Administrador de dispositivos".</div></li>
+                            <img src="are.png" alt="Administrador de dispositivos" class="my-4 mx-auto rounded-lg max-w-full sm:max-w-md h-auto">
+
+                            <li class="flex items-start"><div>Busca en la lista la categoría <b class="text-white">"Bluetooth"</b> y despliégala.</div></li>
+                            <img src="wsa.png" alt="Lista de dispositivos Bluetooth" class="my-4 mx-auto rounded-lg max-w-full sm:max-w-md h-auto">
+
+                            <li class="flex items-start"><div>Haz clic derecho sobre el adaptador principal (ej. "Intel(R) Wireless Bluetooth(R)"). En el menú contextual, selecciona la opción <b class="text-red-400">"Deshabilitar dispositivo"</b>. Confirma la acción si se te solicita.</div></li>
+                            <img src="aqw.png" alt="Menú contextual con la opción Deshabilitar dispositivo" class="my-4 mx-auto rounded-lg max-w-full sm:max-w-sm h-auto">
                         </ol>
-                        <div class="mt-4 bg-gray-800/50 border-l-4 border-yellow-400 text-yellow-200 p-4 rounded-r-lg">
-                            <p><b class="font-bold">Señal de bloqueo:</b> Si la opción "Habilitar dispositivo" no aparece, está en gris o al hacer clic te da un error de "Acceso denegado", es una clara señal de que una política de seguridad lo está impidiendo.</p>
+                        <div class="mt-4 bg-gray-800/50 border-l-4 border-green-400 text-green-200 p-4 rounded-r-lg">
+                            <p><b class="font-bold">Confirmación de bloqueo:</b> El ícono del dispositivo ahora debe mostrar una flecha negra hacia abajo. Esto indica que el hardware está deshabilitado a nivel de sistema operativo.</p>
                         </div>
                     </div>
 
-                    <!-- Método 2: Servicios de Windows -->
                     <div>
-                        <h3 class="font-semibold text-teal-300 mb-3 text-lg">Método 2: Verificar los Servicios de Windows</h3>
-                        <p class="mb-4 text-gray-400">Bluetooth depende de ciertos servicios para funcionar. Si están detenidos, no funcionará.</p>
+                        <h3 class="font-semibold text-red-300 mb-3 text-lg">Método 2: Detener los Servicios de Windows</h3>
                         <ol class="list-none space-y-4 custom-list" style="counter-reset: list-item;">
-                            <li class="flex items-start"><div>Presiona <span class="press-keys">Win</span> + <span class="press-keys">R</span>, escribe <code class="press-keys">services.msc</code> y presiona Enter.</div></li>
-                            <li class="flex items-start"><div>Busca en la lista el <b class="text-white">"Servicio de compatibilidad con Bluetooth"</b>.</div></li>
-                            <li class="flex items-start"><div>Verifica que en la columna "Estado" diga <b class="text-white">"En ejecución"</b> y en "Tipo de inicio" diga <b class="text-white">"Automático"</b>. Si no es así, haz doble clic sobre el servicio para intentar iniciarlo y cambiar su tipo de inicio.</div></li>
+                            <li class="flex items-start"><div>Presiona <span class="press-keys">Win</span> + <span class="press-keys">R</span>. Escribe <code class="press-keys">services.msc</code> y presiona "Enter".</div></li>
+                             <img src="tre.png" alt="Ventana de Servicios de Windows" class="my-4 mx-auto rounded-lg max-w-full sm:max-w-md h-auto">
+
+                            <li class="flex items-start"><div>Busca el <b class="text-white">"Servicio de compatibilidad con Bluetooth"</b>. Haz doble clic sobre él.</div></li>
+                             <img src="swq.png" alt="Servicio de Bluetooth en la lista" class="my-4 mx-auto rounded-lg max-w-full sm:max-w-md h-auto">
+
+                            <li class="flex items-start"><div>En la ventana de propiedades: primero, haz clic en el botón <b class="text-white">"Detener"</b>. Segundo, cambia el <b class="text-white">"Tipo de inicio"</b> a <b class="text-red-400">"Deshabilitado"</b>. Finalmente, haz clic en "Aplicar" y "Aceptar".</div></li>
+                            <img src="ewq.png" alt="Propiedades del servicio para deshabilitarlo" class="my-4 mx-auto rounded-lg max-w-full sm:max-w-md h-auto">
                         </ol>
-                        <div class="mt-4 bg-gray-800/50 border-l-4 border-yellow-400 text-yellow-200 p-4 rounded-r-lg">
-                            <p><b class="font-bold">Señal de bloqueo:</b> Si los botones para iniciar el servicio o cambiar el tipo de inicio están deshabilitados, una política de la empresa o un software de seguridad lo está controlando.</p>
+                        <div class="mt-4 bg-gray-800/50 border-l-4 border-green-400 text-green-200 p-4 rounded-r-lg">
+                            <p><b class="font-bold">Confirmación de bloqueo:</b> El servicio ya no se ejecutará y no se iniciará automáticamente con el sistema. Repite el proceso para otros servicios relacionados con Bluetooth si es necesario.</p>
                         </div>
                     </div>
 
-                    <!-- Método 3: Software de Seguridad -->
                     <div>
-                        <h3 class="font-semibold text-teal-300 mb-3 text-lg">Método 3: Identificar Bloqueos por Software de Seguridad</h3>
-                        <p class="mb-4 text-gray-400">Muchas empresas usan software de seguridad (antivirus corporativos, EDR) que gestionan qué dispositivos se pueden usar. Este es a menudo el culpable.</p>
+                        <h3 class="font-semibold text-red-300 mb-3 text-lg">Método 3: Deshabilitación vía PowerShell (Avanzado)</h3>
+                        <p class="mb-4 text-gray-400">Este método es ideal para automatización y scripting. Ejecutar como Administrador.</p>
                         <ol class="list-none space-y-4 custom-list" style="counter-reset: list-item;">
-                            <li class="flex items-start"><div>Busca en la barra de tareas (cerca del reloj) el ícono del software de seguridad de la empresa (ej. McAfee, Symantec, CrowdStrike, etc.).</div></li>
-                            <li class="flex items-start"><div>Abre el programa y busca secciones como <b class="text-white">"Control de dispositivos"</b>, <b class="text-white">"Prevención de intrusiones"</b> o <b class="text-white">"Políticas del sistema"</b>. Es probable que solo puedas ver el estado y no cambiarlo.</div></li>
+                            <li class="flex items-start"><div>Haz clic derecho sobre el botón de <b class="text-white">"Inicio"</b> y selecciona <b class="text-white">"Terminal (Administrador)"</b> o <b class="text-white">"Windows PowerShell (Administrador)"</b>.</div></li>
+                            <img src="power.png" alt="Abrir PowerShell como Administrador" class="my-4 mx-auto rounded-lg max-w-full sm:max-w-sm h-auto">
+
+                            <li class="flex items-start"><div>Para detener los servicios en la sesión actual, copia y pega el siguiente comando y presiona "Enter":<br><code class="press-keys mt-2 block text-left">Get-Service -Name *bth* | Stop-Service -Force</code></div></li>
+                             <img src="tyu.png" alt="Comando para detener servicios en PowerShell" class="my-4 mx-auto rounded-lg max-w-full sm:max-w-md h-auto">
+
+                            <li class="flex items-start"><div>Para prevenir que los servicios se inicien en el futuro, usa este comando:<br><code class="press-keys mt-2 block text-left">Get-Service -Name *bth* | Set-Service -StartupType Disabled</code></div></li>
+                            <img src="saq.png" alt="Comando para deshabilitar inicio de servicios" class="my-4 mx-auto rounded-lg max-w-full sm:max-w-md h-auto">
                         </ol>
-                        <div class="mt-4 bg-gray-800/50 border-l-4 border-red-500 text-red-300 p-4 rounded-r-lg">
-                            <p><b class="font-bold">¡ADVERTENCIA!</b> No intentes deshabilitar o modificar la configuración de este software. Su propósito es proteger el equipo. Si sospechas que es la causa, <b class="font-bold">reporta tus hallazgos a Soporte Técnico</b>.</p>
+                        <div class="mt-4 bg-gray-800/50 border-l-4 border-green-400 text-green-200 p-4 rounded-r-lg">
+                                <p><b class="font-bold">Confirmación de bloqueo:</b> Al ejecutar <code class="press-keys text-xs">Get-Service -Name *bth*</code> de nuevo, el estado debe ser <b class="text-red-400">"Stopped"</b> y el tipo de inicio <b class="text-red-400">"Disabled"</b>. Esto confirma que la política se ha aplicado correctamente.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- Pie de página -->
-        <footer class="text-center mt-8 pb-4">
-            <p class="text-gray-500 text-sm">Guía Interna para Colaboradores. Si tienes dudas, contacta a Soporte Técnico.</p>
+        <footer class="mt-12 text-center border-t border-gray-700 pt-8">
+            <h3 class="text-lg font-semibold text-white mb-4">Aviso de Protocolo de Seguridad</h3>
+            <div class="text-gray-400 max-w-2xl mx-auto space-y-2">
+                <p><span class="font-bold text-amber-400">1.</span> Esta guía es para uso exclusivo del personal de TI autorizado.</p>
+                <p><span class="font-bold text-amber-400">2.</span> La ejecución de estos pasos debe realizarse siguiendo los protocolos de gestión de cambios de la empresa y bajo una solicitud de servicio autorizada.</p>
+            </div>
         </footer>
     </div>
 

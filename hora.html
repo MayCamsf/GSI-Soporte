@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía de Permisos de Fecha y Hora</title>
+    <title>Guía de auditoría: permisos de fecha y hora</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,113 +31,106 @@
 </head>
 <body class="bg-[#1A202C]">
 
-    <!--
-    Source Material Analysis & Plan:
-    - Source: A simple guide on how to check permissions for changing system date/time.
-    - Goal: Transform the static guide into an engaging, data-driven SPA infographic with a dark theme.
-    - Narrative: 1. Hook with a key stat. 2. Provide the 'how-to'. 3. Visualize the 'why' with a chart. 4. Show the 'what to do' with a flowchart.
-    - This plan tells a story from identification to resolution.
-    -->
-
-    <!--
-    Chosen Color Palette: 'Modern Dark'
-    - #1A202C (Dark Charcoal - Background)
-    - #2D3748 (Dark Slate - Card Background)
-    - #E2E8F0 (Light Grey - Text)
-    - #CBD5E0 (Medium Grey - Accent Text)
-    - #4FD1C5 (Bright Teal - Highlight/Chart)
-    -->
-
-    <!--
-    Confirmation: NEITHER Mermaid JS NOR SVG were used anywhere in this output. All visuals are rendered via HTML/CSS or the HTML5 Canvas element.
-    -->
-    
     <div class="container mx-auto p-4 md:p-8 max-w-5xl">
 
-        <!-- INICIO: Espacio para el logo de la empresa -->
         <div class="flex justify-center mb-4 mt-4">
-            <!-- INSTRUCCIONES:
-                 1. Reemplaza la URL en 'src' con la de tu logo.
-                 2. Ajusta el tamaño cambiando la clase 'w-56'.
-                    - Para hacerlo más pequeño, usa: w-40, w-48.
-                    - Para hacerlo más grande, usa: w-64, w-72.
-            -->
-            <img src="logo.png" alt="Logo de la Empresa" class="w-64 h-auto">
+            <img src="logo.png" alt="Logo de la Empresa" class="w-56 h-auto">
         </div>
-        <!-- FIN: Espacio para el logo de la empresa -->
 
         <header class="text-center text-white mb-12">
-            <h1 class="text-4xl md:text-5xl font-black tracking-tight text-[#E2E8F0]">Guía Rápida</h1>
-            <p class="text-xl md:text-2xl text-[#CBD5E0] font-light">¿Puedo cambiar la hora de mi PC?</p>
+            <h1 class="text-4xl md:text-5xl font-black tracking-tight text-[#E2E8F0]">Guia de verificación de fecha y hora</h1>
+            <p class="text-xl md:text-2xl text-[#CBD5E0] font-light">Protocolo de fecha y hora</p>
         </header>
 
         <main class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
             <div class="md:col-span-2 bg-[#2D3748] rounded-lg shadow-2xl p-6 text-center">
-                <p class="text-lg text-[#CBD5E0]">¿Sabías que la hora de tu equipo probablemente no la controlas tú?</p>
-                <div class="text-6xl md:text-8xl font-extrabold text-[#4FD1C5] my-4">95%</div>
-                <p class="text-lg text-[#E2E8F0]">de los equipos en la empresa tienen la hora controlada por el sistema para proteger la seguridad de todos.</p>
+                <p class="text-lg text-[#CBD5E0]">La sincronización de la hora no es una opción, es un control de seguridad.</p>
+                <div class="text-6xl md:text-8xl font-extrabold text-[#4FD1C5] my-4">100%</div>
+                <p class="text-lg text-[#E2E8F0]">de los equipos en un entorno seguro deben tener la hora controlada y bloqueada por políticas de dominio para garantizar la integridad de los registros.</p>
             </div>
 
-            <div class="bg-[#2D3748] rounded-lg shadow-2xl p-6">
-                <h2 class="text-2xl font-bold text-white border-b-2 border-[#4FD1C5] pb-2 mb-4">Paso 1: ¿Cómo lo reviso?</h2>
-                <p class="text-[#CBD5E0] mb-6">Sigue estos pasos para saber si puedes cambiar la hora en tu computadora con Windows.</p>
+            <div class="md:col-span-2 bg-[#2D3748] rounded-lg shadow-2xl p-6">
+                <h2 class="text-2xl font-bold text-white border-b-2 border-[#4FD1C5] pb-2 mb-4">Paso 1: Verificación visual de la política (GUI)</h2>
+                <p class="text-[#CBD5E0] mb-6">Este protocolo permite una rápida validación visual para determinar si la política de bloqueo de fecha y hora está aplicada correctamente en un equipo con Windows.</p>
                 <ol class="list-decimal list-inside space-y-4 text-[#E2E8F0]">
-                    <li class="p-3 bg-[#1A202C] rounded-md">Ve a <strong class="text-[#4FD1C5]">Inicio > Configuración</strong> (el engrane ⚙️).</li>
-                    <li class="p-3 bg-[#1A202C] rounded-md">Elige <strong class="text-[#4FD1C5]">Hora e idioma</strong>.</li>
-                    <li class="p-3 bg-[#1A202C] rounded-md">Haz clic en <strong class="text-[#4FD1C5]">Fecha y hora</strong>.</li>
-                    <li class="p-3 bg-[#1A202C] rounded-md">Fíjate en los botones. ¡Ahí está la respuesta!</li>
+                    <li>Acceder al menú de **Inicio** y seleccionar **Configuración** (ícono de engrane ⚙️).</li>
+                    <img src="menu.png" alt="Captura de pantalla del ícono de configuración" class="w-full max-w-lg mx-auto rounded-lg my-4 shadow-lg">
+
+                    <li>En la ventana de Configuración, seleccionar la opción **Hora e idioma**.</li>
+                    <img src="hora.png" alt="Captura de pantalla de la ventana de configuración" class="w-full max-w-lg mx-auto rounded-lg my-4 shadow-lg">
+                    
+                    <li>En el menú lateral, verificar la sección **Fecha y hora**. Los controles en esta pantalla indicarán el estado de la política.</li>
+                    <img src="horas.png" alt="Captura de pantalla de los interruptores de fecha y hora" class="w-full max-w-lg mx-auto rounded-lg my-4 shadow-lg">
                 </ol>
             </div>
 
-            <div class="bg-[#2D3748] rounded-lg shadow-2xl p-6">
-                <h2 class="text-2xl font-bold text-white border-b-2 border-[#4FD1C5] pb-2 mb-4">Paso 2: ¿Qué significa lo que veo?</h2>
-                <p class="text-[#CBD5E0] mb-6">Lo que veas en los botones te dirá si tienes permiso o no.</p>
-                <div class="space-y-4">
-                    <div class="border-2 border-red-500 bg-red-900/50 p-4 rounded-lg">
-                        <h3 class="font-bold text-lg text-white">🔒 BLOQUEADO</h3>
-                        <p class="text-white">Si los botones se ven grises y no los puedes mover, significa que la empresa gestiona la hora automáticamente.</p>
-                    </div>
+            <div class="md:col-span-2 bg-[#2D3748] rounded-lg shadow-2xl p-6">
+                <h2 class="text-2xl font-bold text-white border-b-2 border-[#4FD1C5] pb-2 mb-4">Paso 2: Interpretación de resultados de la auditoría</h2>
+                <p class="text-[#CBD5E0] mb-6">El estado de los controles define si el equipo cumple con la política de seguridad.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
                     <div class="border-2 border-green-500 bg-green-900/50 p-4 rounded-lg">
-                        <h3 class="font-bold text-lg text-white">🔓 PERMITIDO</h3>
-                        <p class="text-white">Si puedes mover los botones, tienes permiso para cambiar la hora y fecha manualmente.</p>
+                        <h3 class="font-bold text-lg text-white">✅ Estado correcto (bloqueado)</h3>
+                        <p class="text-white mt-2">Los interruptores están en gris y no se pueden manipular. Esto confirma que la hora es gestionada centralmente por el servidor de la organización. El equipo cumple con la política.</p>
+                        <img src="as.png" alt="Captura de pantalla de botones bloqueados" class="w-full max-w-md mx-auto rounded-lg my-4 shadow-lg">
+                    </div>
+
+                    <div class="border-2 border-red-500 bg-red-900/50 p-4 rounded-lg">
+                        <h3 class="font-bold text-lg text-white">❌ Anomalía detectada (desbloqueado)</h3>
+                        <p class="text-white mt-2">Los interruptores están activos y pueden ser manipulados por el usuario. Esto representa una desviación de la política de hardening y debe ser documentado y reportado de inmediato.</p>
+                        <img src="ass.png" alt="Captura de pantalla de botones permitidos" class="w-full max-w-md mx-auto rounded-lg my-4 shadow-lg">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="md:col-span-2 bg-[#2D3748] rounded-lg shadow-2xl p-6">
+                <h2 class="text-2xl font-bold text-white border-b-2 border-[#4FD1C5] pb-2 mb-4">Verificación por línea de comandos (método definitivo)</h2>
+                <p class="text-[#CBD5E0] mb-4">Este método confirma de manera concluyente la fuente de sincronización horaria del equipo. Es el procedimiento recomendado para un reporte de auditoría detallado.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-[#4FD1C5] mb-2">Opción 1: Símbolo del sistema (CMD)</h3>
+                        <ol class="list-decimal list-inside space-y-4 text-[#E2E8F0]">
+                            <li>Presionar **Windows + R**, escribir <code class="bg-[#1A202C] px-2 py-1 rounded">cmd</code> y presionar Enter.</li>
+                            <img src="cmd.png" alt="Captura de pantalla escribiendo cmd" class="w-full max-w-md mx-auto rounded-lg my-4 shadow-lg">
+
+                            <li>En la terminal, ejecutar el comando: <code class="bg-[#1A202C] px-2 py-1 rounded">w32tm /query /status</code>.</li>
+                            <img src="zx.png" alt="Captura de pantalla del resultado del comando" class="w-full max-w-md mx-auto rounded-lg my-4 shadow-lg">
+
+                            <li>**Analizar el resultado:** Verificar el campo "Source" (Fuente). Debe apuntar a un servidor de dominio de la empresa (ej: `dc01.empresa.local`). Si apunta a `Local CMOS Clock`, la política no está siendo aplicada.</li>
+                        </ol>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-[#4FD1C5] mb-2">Opción 2: PowerShell</h3>
+                        <ol class="list-decimal list-inside space-y-4 text-[#E2E8F0]">
+                            <li>Presionar **Windows + R**, escribir <code class="bg-[#1A202C] px-2 py-1 rounded">powershell</code> y presionar Enter.</li>
+                            <img src="powers.png" alt="Captura de pantalla escribiendo powershell" class="w-full max-w-md mx-auto rounded-lg my-4 shadow-lg">
+
+                            <li>En la terminal, ejecutar el mismo comando: <code class="bg-[#1A202C] px-2 py-1 rounded">w32tm /query /status</code>.</li>
+                             <img src="zx.png" alt="Captura de pantalla del resultado del comando" class="w-full max-w-md mx-auto rounded-lg my-4 shadow-lg">
+
+                            <li>**Analizar el resultado:** La interpretación es idéntica a la de CMD. El objetivo es confirmar que la fuente de sincronización sea un controlador de dominio autorizado.</li>
+                        </ol>
                     </div>
                 </div>
             </div>
 
             <div class="md:col-span-2 bg-[#2D3748] rounded-lg shadow-2xl p-6">
-                <h2 class="text-2xl font-bold text-white text-center border-b-2 border-[#4FD1C5] pb-2 mb-4">¿Y por qué no puedo cambiarla?</h2>
-                <p class="text-[#CBD5E0] text-center mb-6">Mantener la misma hora en todos los equipos es muy importante para que todo en la empresa funcione de forma segura y correcta.</p>
+                <h2 class="text-2xl font-bold text-white text-center border-b-2 border-[#4FD1C5] pb-2 mb-4">Fundamento de la política de bloqueo</h2>
+                <p class="text-[#CBD5E0] text-center mb-6">La sincronización horaria centralizada es un control crítico para la ciberseguridad y la integridad operativa.</p>
                 <div class="chart-container">
                     <canvas id="reasonsChart"></canvas>
                 </div>
             </div>
-
-            <div class="md:col-span-2 bg-[#2D3748] rounded-lg shadow-2xl p-6">
-                <h2 class="text-2xl font-bold text-white text-center border-b-2 border-[#4FD1C5] pb-2 mb-4">Necesito un cambio, ¿qué hago?</h2>
-                <p class="text-[#CBD5E0] text-center mb-6">Si tienes una buena razón para necesitar un cambio de hora, este es el proceso correcto.</p>
-                <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 text-center text-white">
-                    <div class="p-4 bg-[#1A202C] rounded-lg flex-1">
-                        <p class="font-bold">1. Identifica tu necesidad</p>
-                        <p class="text-sm text-[#CBD5E0]">Por ejemplo, para una prueba de un programa.</p>
-                    </div>
-                    <div class="text-2xl font-bold text-[#4FD1C5]">→</div>
-                    <div class="p-4 bg-[#1A202C] rounded-lg flex-1">
-                        <p class="font-bold">2. Contacta a Soporte TI</p>
-                        <p class="text-sm text-[#CBD5E0]">Crea un ticket explicando por qué necesitas el cambio.</p>
-                    </div>
-                    <div class="text-2xl font-bold text-[#4FD1C5]">→</div>
-                    <div class="p-4 bg-[#1A202C] rounded-lg flex-1">
-                        <p class="font-bold">3. El equipo te ayuda</p>
-                        <p class="text-sm text-[#CBD5E0]">Soporte revisará tu caso y hará el cambio por ti.</p>
-                    </div>
-                </div>
-                <p class="text-center mt-6 text-red-400 font-bold">¡Importante! No uses programas extraños para cambiar la hora. Podrías causar problemas de seguridad.</p>
-            </div>
         </main>
 
-        <footer class="text-center text-[#CBD5E0] mt-12 py-4 border-t border-[#2D3748]">
-            <p>Guía de apoyo para el personal de la empresa. &copy; 2024</p>
+        <footer class="mt-20 text-center border-t border-gray-700 pt-10">
+            <h3 class="text-lg font-semibold text-white mb-4">Recuerda que:</h3>
+            <div class="text-gray-400 max-w-2xl mx-auto space-y-2">
+                <p><span class="font-bold text-amber-400">1.</span> Esta guía es un documento de consulta exclusivamente para el proceso de auditoría interna.</p>
+                <p><span class="font-bold text-amber-400">2.</span> Queda prohibido modificar cualquier configuración sin seguir el protocolo de autorización establecido por el departamento de TI.</p>
+            </div>
         </footer>
 
     </div>
@@ -149,10 +142,10 @@
                 new Chart(ctx, {
                     type: 'bar',
                     data: {
-                        labels: ['Seguridad de la Red', 'Registros Correctos', 'Auditorías y Normas', 'Programas Internos'],
+                        labels: ['Integridad de logs (forense)', 'Autenticación (Kerberos)', 'Cumplimiento de auditorías', 'Consistencia de aplicaciones'],
                         datasets: [{
-                            label: 'Importancia',
-                            data: [90, 85, 70, 65],
+                            label: 'Nivel de criticidad',
+                            data: [95, 90, 80, 75],
                             backgroundColor: [
                                 '#4FD1C5',
                                 'rgba(79, 209, 197, 0.8)',
@@ -195,7 +188,7 @@
                             },
                             title: {
                                 display: true,
-                                text: 'Razones para Mantener la Hora Sincronizada',
+                                text: 'Razones de seguridad para la sincronización horaria',
                                 color: '#E2E8F0',
                                 font: {
                                     size: 18
@@ -206,11 +199,7 @@
                                     title: function(tooltipItems) {
                                         const item = tooltipItems[0];
                                         let label = item.chart.data.labels[item.dataIndex];
-                                        if (Array.isArray(label)) {
-                                          return label.join(' ');
-                                        } else {
-                                          return label;
-                                        }
+                                        return Array.isArray(label) ? label.join(' ') : label;
                                     }
                                 }
                             }
@@ -221,4 +210,4 @@
         });
     </script>
 </body>
-</html>
+</html

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cómo Encontrar tu Dirección IP – GSI</title>
+    <title>Guía para visualizar la dirección IP del equipo – GSI</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,11 +36,15 @@
             padding: 2rem;
             border: 1px solid #4A5568;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        .card-content {
+            flex-grow: 1;
         }
         .flow-step {
             background-color: #4A5568;
@@ -61,7 +65,7 @@
         .step-image-container {
             display: flex;
             justify-content: center;
-            padding: 1rem 0;
+            padding: 1.25rem 0;
         }
         .step-image {
             height: auto;
@@ -80,82 +84,82 @@
                 <img src="logo.png" alt="Logo de la Empresa" class="w-56 h-auto" onerror="this.onerror=null;this.style.display='none'">
             </div>
             
-            <h1 class="text-4xl md:text-5xl font-black text-white mb-2">¿Cuál es la IP de mi equipo?</h1>
-            <p class="text-lg text-blue-300 max-w-2xl mx-auto">Una guía visual para encontrar el identificador de tu equipo en la red.</p>
+            <h1 class="text-4xl md:text-5xl font-black text-white mb-2">Cómo encontrar la dirección IP de su equipo</h1>
+            <p class="text-lg text-blue-300 max-w-2xl mx-auto">Una guía visual detallada para identificar su computadora en la red.</p>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
             <div class="card">
-                <h2 class="text-2xl font-bold text-white mb-4">Opción 1: Método Rápido (con teclado)</h2>
-                <p class="text-gray-400 mb-6">Para ir al grano. Esta es la forma más directa.</p>
-                <div class="space-y-2">
-                    <div class="flow-step">Presiona <kbd class="font-sans bg-gray-300 text-gray-900 p-1 rounded shadow">Win</kbd> + <kbd class="font-sans bg-gray-300 text-gray-900 p-1 rounded shadow">R</kbd></div>
-                    
-                    <div class="step-image-container">
-                        <!-- Para cambiar el tamaño, modifica el número en 'width: 300px;' -->
-                        <img src="paso1.png" alt="Ventana Ejecutar" class="step-image" style="width: 300px;">
+                <div class="card-content">
+                    <h2 class="text-2xl font-bold text-white mb-4">Opción 1: método visual (con menús)</h2>
+                    <p class="text-gray-400 mb-6">Si prefiere utilizar el ratón y las ventanas de Windows.</p>
+                     <div class="space-y-2">
+                        <div class="flow-step">1. Dé clic en el menú "Inicio" y seleccione "Configuración".</div>
+                        <div class="step-image-container"><img src="menu.png" alt="Menú Inicio" class="step-image" style="width: 300px;"></div>
+    
+                        <div class="flow-arrow">&darr;</div>
+                        <div class="flow-step">2. En la nueva ventana, dé clic en "Red e Internet".</div>
+                        <div class="step-image-container"><img src="red.png" alt="Ventana de Configuración" class="step-image" style="width: 300px;"></div>
+    
+                        <div class="flow-arrow">&darr;</div>
+                        <div class="flow-step">3. Seleccione "Wi-Fi" o "Ethernet" y dé clic en "Propiedades".</div>
+                        <div class="step-image-container"><img src="prop.png" alt="Sección Red e Internet" class="step-image" style="width: 300px;"></div>
+    
+                        <div class="flow-arrow">&darr;</div>
+                        <div class="flow-step">4. Busque el número junto a "Dirección IPv4".</div>
+                        <div class="step-image-container"><img src="ip.png" alt="Ventana de Propiedades" class="step-image" style="width: 300px;"></div>
                     </div>
-
-                    <div class="flow-arrow">&darr;</div>
-                    <div class="flow-step">Escribe <code class="bg-black text-white px-2 py-1 rounded">cmd</code> y presiona Enter</div>
-
-                    <div class="step-image-container">
-                        <!-- Para cambiar el tamaño, modifica el número en 'width: 300px;' -->
-                        <img src="cmd.png" alt="Consola CMD" class="step-image" style="width: 300px;">
-                    </div>
-
-                    <div class="flow-arrow">&darr;</div>
-                    <div class="flow-step">Escribe <code class="bg-black text-white px-2 py-1 rounded">ipconfig</code> y presiona Enter</div>
-
-                    <div class="step-image-container">
-                        <!-- Para cambiar el tamaño, modifica el número en 'width: 300px;' -->
-                        <img src="config.png" alt="Resultado de ipconfig" class="step-image" style="width: 300px;">
-                    </div>
-
-                    <div class="flow-arrow">&darr;</div>
-                    <div class="flow-step">Busca tu <span class="text-blue-300 font-bold">Dirección IPv4</span></div>
                 </div>
             </div>
             <div class="card">
-                <h2 class="text-2xl font-bold text-white mb-4">Opción 2: Método Visual (con menús)</h2>
-                <p class="text-gray-400 mb-6">Si prefieres usar el ratón y las ventanas de Windows.</p>
-                 <div class="space-y-2">
-                    <div class="flow-step">Ve a <span class="text-blue-300">Configuración</span> &gt; <span class="text-blue-300">Red e Internet</span></div>
+                <div class="card-content">
+                    <h2 class="text-2xl font-bold text-white mb-4">Opción 2: método alternativo (PowerShell)</h2>
+                    <p class="text-gray-400 mb-6">Una herramienta más moderna que suele estar disponible.</p>
+                    <div class="space-y-2">
+                        <div class="flow-step">1. En el menú "Inicio", escriba <code class="bg-black text-white px-2 py-1 rounded">PowerShell</code> y dé clic en la aplicación.</div>
+                        <div class="step-image-container"><img src="power.png" alt="Búsqueda de PowerShell" class="step-image" style="width: 300px;"></div>
 
-                    <div class="step-image-container">
-                        <!-- Para cambiar el tamaño, modifica el número en 'width: 300px;' -->
-                        <img src="conf.png" alt="Ventana de Configuración" class="step-image" style="width: 300px;">
+                        <div class="flow-arrow">&darr;</div>
+                        <div class="flow-step">2. En la ventana azul, escriba <code class="bg-black text-white px-2 py-1 rounded">Get-NetIPAddress</code> y presione "Enter".</div>
+                        <div class="step-image-container"><img src="get.png" alt="Ventana de PowerShell" class="step-image" style="width: 300px;"></div>
+
+                        <div class="flow-arrow">&darr;</div>
+                        <div class="flow-step">3. Aparecerá una lista. Busque el número en la columna "IPAddress".</div>
+                        <div class="step-image-container"><img src="ipa.png" alt="Resultado en PowerShell" class="step-image" style="width: 300px;"></div>
                     </div>
-
-                    <div class="flow-arrow">&darr;</div>
-                    <div class="flow-step">Selecciona <span class="text-blue-300">Wi-Fi</span> o <span class="text-blue-300">Ethernet</span></div>
-
-                    <div class="step-image-container">
-                        <!-- Para cambiar el tamaño, modifica el número en 'width: 300px;' -->
-                        <img src="red.png" alt="Sección Red e Internet" class="step-image" style="width: 300px;">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="text-2xl font-bold text-white mb-4">Opción 3: método clásico (CMD)</h2>
+                    <p class="text-gray-400 mb-6">Este método podría estar deshabilitado en algunos equipos.</p>
+                    <div class="space-y-2">
+                        <div class="flow-step">1. Presione al mismo tiempo las teclas <kbd class="font-sans bg-gray-300 text-gray-900 p-1 rounded shadow">Win</kbd> + <kbd class="font-sans bg-gray-300 text-gray-900 p-1 rounded shadow">R</kbd>.</div>
+                        <div class="step-image-container"><img src="paso1.png" alt="Teclado" class="step-image" style="width: 300px;"></div>
+    
+                        <div class="flow-arrow">&darr;</div>
+                        <div class="flow-step">2. En la ventana que aparece, escriba <code class="bg-black text-white px-2 py-1 rounded">cmd</code> y dé clic en "Aceptar".</div>
+                        <div class="step-image-container"><img src="cmd.png" alt="Ventana Ejecutar" class="step-image" style="width: 300px;"></div>
+    
+                        <div class="flow-arrow">&darr;</div>
+                        <div class="flow-step">3. En la ventana negra, escriba <code class="bg-black text-white px-2 py-1 rounded">ipconfig</code> y presione "Enter".</div>
+                        <div class="step-image-container"><img src="config.png" alt="Ventana de comandos" class="step-image" style="width: 300px;"></div>
+    
+                        <div class="flow-arrow">&darr;</div>
+                        <div class="flow-step">4. Busque el texto "Dirección IPv4". Ese es el número que necesita.</div>
+                        <div class="step-image-container"><img src="ipv.png" alt="Resultado de ipconfig" class="step-image" style="width: 300px;"></div>
                     </div>
-
-                    <div class="flow-arrow">&darr;</div>
-                    <div class="flow-step">Haz clic en <span class="text-blue-300">Propiedades</span> de tu red</div>
-
-                    <div class="step-image-container">
-                        <!-- Para cambiar el tamaño, modifica el número en 'width: 300px;' -->
-                        <img src="wi.png" alt="Ventana de Propiedades" class="step-image" style="width: 300px;">
-                    </div>
-
-                    <div class="flow-arrow">&darr;</div>
-                    <div class="flow-step">Encuentra tu <span class="text-blue-300 font-bold">Dirección IPv4</span></div>
                 </div>
             </div>
         </div>
 
-        <div class="card bg-gray-800 p-8 border-blue-700">
+        <div class="card bg-gray-800 p-8 border-blue-700 mt-12">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div class="text-center md:text-left">
-                    <h2 class="text-3xl font-bold text-white mb-4">¿Y si mi equipo tiene restricciones?</h2>
-                    <p class="text-blue-200 mb-6">No te preocupes. Ver tu IP es una acción de consulta que casi nunca está bloqueada. La probabilidad de que estos métodos funcionen es altísima.</p>
+                    <h2 class="text-3xl font-bold text-white mb-4">¿Qué sucede si el equipo tiene restricciones?</h2>
+                    <p class="text-blue-200 mb-6">No se preocupe. Estos métodos son de consulta y no modifican el sistema, por lo que casi nunca están bloqueados. La probabilidad de que funcionen es altísima.</p>
                     <p class="text-5xl font-black text-yellow-400">99%</p>
-                    <p class="text-lg font-semibold text-white">Tasa de Éxito Estimada</p>
+                    <p class="text-lg font-semibold text-white">Tasa de éxito estimada</p>
                 </div>
                 <div>
                     <div class="chart-container">
@@ -164,6 +168,14 @@
                 </div>
             </div>
         </div>
+
+        <footer class="mt-20 text-center border-t border-gray-700 pt-10">
+            <h3 class="text-lg font-semibold text-white mb-4">Recuerda que:</h3>
+            <div class="text-gray-400 max-w-2xl mx-auto space-y-2">
+                <p><span class="font-bold text-amber-400">1.</span> Esta guía es un documento de consulta exclusivamente para el proceso de auditoría interna.</p>
+                <p><span class="font-bold text-amber-400">2.</span> Queda prohibido modificar cualquier configuración sin seguir el protocolo de autorización establecido por el departamento de TI.</p>
+            </div>
+        </footer>
 
     </div>
 
@@ -181,7 +193,7 @@
         new Chart(successRateCtx, {
             type: 'doughnut',
             data: {
-                labels: ['Éxito de Visualización', 'Bloqueado (Caso Raro)'],
+                labels: ['Éxito de visualización', 'Bloqueado (caso raro)'],
                 datasets: [{
                     label: 'Probabilidad',
                     data: [99, 1],

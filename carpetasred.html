@@ -1,22 +1,18 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guía de Seguridad para Equipos Windows</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Aplicar la fuente Inter a todo el cuerpo del documento */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #1A202C;
         }
-        /* Estilo para los bloques de código */
         code {
             background-color: #2D3748;
             color: #A0AEC0;
@@ -30,101 +26,100 @@
 
     <div class="container mx-auto px-4 py-8 max-w-4xl">
 
-        <!-- INICIO: Espacio para el logo de la empresa -->
         <div class="flex justify-center mb-6 mt-4">
-            <!-- 
-                INSTRUCCIONES:
-                1. Reemplaza la URL en 'src' con la de tu logo.
-                2. Ajusta el tamaño cambiando la clase 'w-56'.
-                   - Más pequeño: w-40, w-48.
-                   - Más grande: w-64, w-72.
-            -->
             <img src="logo.png" alt="Logo de la Empresa" class="w-56 h-auto">
         </div>
-        <!-- FIN: Espacio para el logo de la empresa -->
 
-        <!-- Título y descripción -->
         <div class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Guía Rápida de Seguridad</h1>
-            <p class="text-lg text-gray-400">Revisa y ajusta la configuración de tu equipo Windows para proteger tu información.</p>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Guía de seguridad para equipos</h1>
+            <p class="text-lg text-gray-400">Cómo revisar la configuración de tu equipo Windows para proteger la información.</p>
         </div>
 
-        <!-- Contenedor principal de la guía -->
-        <div class="bg-[#2D3748] rounded-xl shadow-2xl p-6 md:p-10 space-y-10">
+        <div class="bg-[#2D3748] rounded-xl shadow-2xl p-6 md:p-10 space-y-12">
             
-            <!-- SECCIÓN 1: MÉTODO RÁPIDO -->
             <div>
-                <h2 class="text-2xl font-bold text-white mb-6 border-l-4 border-teal-400 pl-4">Método 1: La forma rápida de ver tus carpetas compartidas</h2>
-                <p class="mb-6 text-gray-400">
-                    Este método es ideal para una revisión veloz de lo que tu equipo está mostrando en la red de la oficina.
-                </p>
-                <ol class="space-y-6">
-                    <!-- Paso 1 -->
-                    <li class="flex items-start">
-                        <div class="flex-shrink-0 bg-teal-500 text-white rounded-full h-8 w-8 flex items-center justify-center font-bold mr-4">1</div>
-                        <div>
-                            <h3 class="font-semibold text-lg text-white mb-1">Abre el Explorador de Archivos</h3>
-                            <p class="text-gray-400">Es el ícono de la carpeta amarilla <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" /></svg> que normalmente encuentras en tu barra de tareas.</p>
-                        </div>
+                <h2 class="text-2xl font-bold text-white mb-6 border-l-4 border-teal-400 pl-4">Método 1: Revisión visual de carpetas compartidas</h2>
+                <p class="mb-8 text-gray-400">Este método te permite ver rápidamente qué carpetas son visibles en la red. No necesitas permisos especiales para solo mirar.</p>
+
+                <h3 class="text-xl font-semibold text-white mb-4">Opción A: A través del explorador de archivos</h3>
+                <ol class="space-y-4">
+                    <li class="pl-4">
+                        <p class="text-gray-300"><strong>1.</strong> Abre el "Explorador de archivos". Es el ícono de la carpeta amarilla <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" /></svg> en la barra de tareas.</p>
+                        <div class="my-4 flex justify-center"><img src="m.png" alt="Explorador de archivos" class="max-w-lg w-full h-auto rounded-md shadow-lg"></div>
                     </li>
-                    <!-- Paso 2 -->
-                    <li class="flex items-start">
-                        <div class="flex-shrink-0 bg-teal-500 text-white rounded-full h-8 w-8 flex items-center justify-center font-bold mr-4">2</div>
-                        <div>
-                            <h3 class="font-semibold text-lg text-white mb-1">Escribe la dirección local</h3>
-                            <p class="text-gray-400">En la barra de la parte de arriba, escribe <code>\\localhost</code> y presiona la tecla <strong>Enter</strong>.</p>
-                        </div>
+                    <li class="pl-4">
+                        <p class="text-gray-300"><strong>2.</strong> Haz clic en la barra de direcciones de la parte superior, borra lo que esté escrito y teclea <code>\\localhost</code>. Después, presiona la tecla "Enter".</p>
+                        <div class="my-4 flex justify-center"><img src="n.png" alt="Barra de direcciones con localhost" class="max-w-lg w-full h-auto rounded-md shadow-lg"></div>
                     </li>
-                    <!-- Paso 3 -->
-                    <li class="flex items-start">
-                        <div class="flex-shrink-0 bg-teal-500 text-white rounded-full h-8 w-8 flex items-center justify-center font-bold mr-4">3</div>
-                        <div>
-                            <h3 class="font-semibold text-lg text-white mb-1">Revisa la lista</h3>
-                            <p class="text-gray-400">Aparecerá una lista con todas las carpetas que tu equipo está compartiendo en ese momento.</p>
-                        </div>
+                    <li class="pl-4">
+                        <p class="text-gray-300"><strong>3.</strong> La ventana te mostrará todas las carpetas que tu equipo está compartiendo en la red.</p>
+                        <div class="my-4 flex justify-center"><img src="v.png" alt="Lista de carpetas compartidas" class="max-w-lg w-full h-auto rounded-md shadow-lg"></div>
+                    </li>
+                </ol>
+
+                <hr class="border-gray-700 my-8">
+
+                <h3 class="text-xl font-semibold text-white mb-4">Opción B: Con la herramienta de "Administración de equipos"</h3>
+                 <p class="mb-4 text-gray-400">Esta opción te da una vista más técnica y completa.</p>
+                <ol class="space-y-4">
+                    <li class="pl-4">
+                        <p class="text-gray-300"><strong>1.</strong> Mueve el ratón sobre el ícono de Inicio de Windows (la ventana en la esquina inferior izquierda) y haz clic derecho.</p>
+                        <div class="my-4 flex justify-center"><img src="p.png" alt="Menú de inicio con clic derecho" class="max-w-lg w-full h-auto rounded-md shadow-lg"></div>
+                    </li>
+                    <li class="pl-4">
+                        <p class="text-gray-300"><strong>2.</strong> En el menú que aparece, busca y haz clic izquierdo en la opción <strong>"Administración de equipos"</strong>.</p>
+                        <div class="my-4 flex justify-center"><img src="o.png" alt="Seleccionar Administración de equipos" class="max-w-lg w-full h-auto rounded-md shadow-lg"></div>
+                    </li>
+                    <li class="pl-4">
+                        <p class="text-gray-300"><strong>3.</strong> En la nueva ventana, busca en el panel izquierdo la opción <strong>"Carpetas compartidas"</strong> y haz doble clic para desplegarla. Luego, haz un solo clic en <strong>"Recursos compartidos"</strong>.</p>
+                        <div class="my-4 flex justify-center"><img src="po.png" alt="Navegación a Recursos compartidos" class="max-w-lg w-full h-auto rounded-md shadow-lg"></div>
+                    </li>
+                     <li class="pl-4">
+                        <p class="text-gray-300"><strong>4.</strong> En el panel central verás la lista completa de carpetas compartidas. Si quieres dejar de compartir una y tienes los permisos, haz clic derecho sobre ella y selecciona <strong>"Dejar de compartir"</strong>.</p>
+                        <div class="my-4 flex justify-center"><img src="poi.png" alt="Dejar de compartir una carpeta" class="max-w-lg w-full h-auto rounded-md shadow-lg"></div>
                     </li>
                 </ol>
             </div>
 
-            <!-- SECCIÓN 2: MÉTODO AVANZADO -->
             <div>
-                <h2 class="text-2xl font-bold text-white mb-6 border-l-4 border-cyan-400 pl-4">Método 2: Revisión detallada (Avanzado)</h2>
-                <p class="mb-6 text-gray-400">
-                    Si quieres una vista completa de todo lo que se comparte, incluyendo carpetas administrativas del sistema, este es el mejor método.
-                </p>
-                <ol class="space-y-6">
-                    <!-- Paso 1 -->
-                    <li class="flex items-start">
-                        <div class="flex-shrink-0 bg-cyan-500 text-white rounded-full h-8 w-8 flex items-center justify-center font-bold mr-4">1</div>
-                        <div>
-                            <h3 class="font-semibold text-lg text-white mb-1">Abre "Administración de equipos"</h3>
-                            <p class="text-gray-400">Haz clic derecho en el menú de Inicio de Windows (el ícono de la ventana) y selecciona <strong>"Administración de equipos"</strong>.</p>
-                        </div>
+                <h2 class="text-2xl font-bold text-white mb-6 border-l-4 border-purple-400 pl-4">Método 2: Revisión por consola (CMD o PowerShell)</h2>
+                <p class="mb-8 text-gray-400">Si prefieres usar comandos o alguna de las herramientas visuales no funciona, puedes usar la consola. Ambas opciones te mostrarán la misma información.</p>
+
+                <h3 class="text-xl font-semibold text-white mb-4">Opción A: Usando el Símbolo del sistema (CMD)</h3>
+                <ol class="space-y-4">
+                    <li class="pl-4">
+                        <p><strong>1.</strong> Presiona la tecla de Windows, escribe <code>cmd</code> y selecciona <strong>"Símbolo del sistema"</strong> de la lista.</p>
+                        <div class="my-4 flex justify-center"><img src="cmdw.png" alt="Abrir CMD" class="max-w-lg w-full h-auto rounded-md shadow-lg"></div>
                     </li>
-                    <!-- Paso 2 -->
-                    <li class="flex items-start">
-                        <div class="flex-shrink-0 bg-cyan-500 text-white rounded-full h-8 w-8 flex items-center justify-center font-bold mr-4">2</div>
-                        <div>
-                            <h3 class="font-semibold text-lg text-white mb-1">Ve a Carpetas compartidas</h3>
-                            <p class="text-gray-400">En el menú de la izquierda, despliega <strong>"Herramientas del sistema"</strong> > <strong>"Carpetas compartidas"</strong> y haz clic en <strong>"Recursos compartidos"</strong>.</p>
-                        </div>
+                    <li class="pl-4">
+                        <p><strong>2.</strong> En la ventana negra que aparece, escribe el comando <code>net share</code> y presiona "Enter".</p>
+                        <div class="my-4 flex justify-center"><img src="poiu.png" alt="Comando net share en CMD" class="max-w-lg w-full h-auto rounded-md shadow-lg"></div>
                     </li>
-                    <!-- Paso 3 -->
-                    <li class="flex items-start">
-                        <div class="flex-shrink-0 bg-cyan-500 text-white rounded-full h-8 w-8 flex items-center justify-center font-bold mr-4">3</div>
-                        <div>
-                            <h3 class="font-semibold text-lg text-white mb-1">Analiza la lista completa</h3>
-                            <p class="text-gray-400">Verás una lista de todas las carpetas compartidas. Para dejar de compartir una, haz clic derecho sobre ella y selecciona <strong>"Dejar de compartir"</strong>.</p>
-                        </div>
+                    <li class="pl-4">
+                        <p><strong>3.</strong> Aparecerá una lista con los nombres de los recursos compartidos y su ubicación.</p>
+                        <div class="my-4 flex justify-center"><img src="poiuy.png" alt="Resultado del comando net share" class="max-w-lg w-full h-auto rounded-md shadow-lg"></div>
+                    </li>
+                </ol>
+
+                <hr class="border-gray-700 my-8">
+
+                <h3 class="text-xl font-semibold text-white mb-4">Opción B: Usando PowerShell</h3>
+                <ol class="space-y-4">
+                    <li class="pl-4">
+                        <p><strong>1.</strong> Presiona la tecla de Windows, escribe <code>powershell</code> y selecciona <strong>"Windows PowerShell"</strong> de la lista.</p>
+                        <div class="my-4 flex justify-center"><img src="power.png" alt="Abrir PowerShell" class="max-w-lg w-full h-auto rounded-md shadow-lg"></div>
+                    </li>
+                    <li class="pl-4">
+                        <p><strong>2.</strong> En la ventana azul, escribe el mismo comando: <code>net share</code> y presiona "Enter".</p>
+                        <div class="my-4 flex justify-center"><img src="lk.png" alt="Comando net share en PowerShell" class="max-w-lg w-full h-auto rounded-md shadow-lg"></div>
                     </li>
                 </ol>
             </div>
 
-            <!-- SECCIÓN 3: CÓMO DESACTIVAR TODO -->
             <div>
-                <h2 class="text-2xl font-bold text-white mb-6 border-l-4 border-rose-400 pl-4">¿Cómo desactivar por completo el uso compartido?</h2>
+                <h2 class="text-2xl font-bold text-white mb-6 border-l-4 border-rose-400 pl-4">¿Cómo desactivar el uso compartido?</h2>
                 <p class="mb-6 text-gray-400">
-                    Si prefieres que tu equipo no comparta nada y no sea visible para otros en la red, puedes desactivar la función por completo.
+                    Si identificaste una carpeta que no debería ser pública o quieres asegurarte de que tu equipo no sea visible en la red, sigue estos pasos.
                 </p>
                 <div class="bg-slate-800/50 border border-yellow-500/30 rounded-lg p-6">
                     <div class="flex items-center">
@@ -132,27 +127,32 @@
                             <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.21 3.03-1.742 3.03H4.42c-1.532 0-2.492-1.696-1.742-3.03l5.58-9.92zM10 13a1 1 0 110-2 1 1 0 010 2zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
                         </svg>
                         <div>
-                            <h3 class="text-xl font-bold text-yellow-400">¡Importante!</h3>
-                            <p class="text-yellow-200/80 mt-1">Al hacer esto, no podrás acceder a impresoras de red u otras carpetas compartidas en la oficina.</p>
+                            <h3 class="text-xl font-bold text-yellow-400">¡Atención! Se requieren permisos</h3>
+                            <p class="text-yellow-200/80 mt-1">Para realizar estos cambios necesitas autorización y, probablemente, permisos de administrador. Si las opciones aparecen en gris o bloqueadas, no podrás continuar.</p>
                         </div>
                     </div>
-                    <ol class="list-decimal list-inside mt-4 space-y-2 text-gray-300 pl-4">
-                        <li>Abre el menú de Inicio, busca <strong>"Panel de control"</strong> y ábrelo.</li>
-                        <li>Ve a <strong>"Redes e Internet"</strong> > <strong>"Centro de redes y recursos compartidos"</strong>.</li>
-                        <li>En el menú de la izquierda, haz clic en <strong>"Cambiar configuración de uso compartido avanzado"</strong>.</li>
-                        <li>Verás perfiles (Privado, Invitado o Público). Despliega el perfil que esté activo.</li>
-                        <li>Selecciona <strong>"Desactivar la detección de redes"</strong> y <strong>"Desactivar el uso compartido de archivos e impresoras"</strong>.</li>
-                        <li>Haz clic en <strong>"Guardar cambios"</strong>.</li>
+                    <ol class="list-decimal list-inside mt-6 space-y-4 text-gray-300 pl-4">
+                        <li>Abre el <strong>"Panel de control"</strong> (puedes buscarlo en el menú de Inicio).</li>
+                        <div class="my-4 flex justify-center"><img src="pan.png" alt="Panel de control" class="max-w-lg w-full h-auto rounded-md shadow-lg"></div>
+                        <li>Haz clic en <strong>"Redes e Internet"</strong> y luego en <strong>"Centro de redes y recursos compartidos"</strong>.</li>
+                        <div class="my-4 flex justify-center"><img src="mn.png" alt="Centro de redes y recursos compartidos" class="max-w-lg w-full h-auto rounded-md shadow-lg"></div>
+                        <li>En el menú de la izquierda, selecciona <strong>"Cambiar configuración de uso compartido avanzado"</strong>.</li>
+                        <div class="my-4 flex justify-center"><img src="mnb.png" alt="Configuración de uso compartido avanzado" class="max-w-lg w-full h-auto rounded-md shadow-lg"></div>
+                        <li>Verás perfiles (Privado, Público). Despliega el que esté activo y selecciona <strong>"Desactivar la detección de redes"</strong> y <strong>"Desactivar el uso compartido de archivos e impresoras"</strong>.</li>
+                        <div class="my-4 flex justify-center"><img src="yt.png" alt="Desactivar detección y uso compartido" class="max-w-lg w-full h-auto rounded-md shadow-lg"></div>
+                        <li>Haz clic en <strong>"Guardar cambios"</strong>. Es posible que te pida una contraseña de administrador.</li>
                     </ol>
                 </div>
             </div>
         </div>
 
-        <!-- Pie de página -->
-        <footer class="text-center mt-12 text-gray-500 text-sm">
-            <p>Departamento de TI | Guía de Seguridad Interna</p>
+        <footer class="mt-20 text-center border-t border-gray-700 pt-10">
+            <h3 class="text-lg font-semibold text-white mb-4">Recuerda que:</h3>
+            <div class="text-gray-400 max-w-2xl mx-auto space-y-2">
+                <p><span class="font-bold text-amber-400">1.</span> Esta guía es un documento de consulta exclusivamente para el proceso de auditoría interna.</p>
+                <p><span class="font-bold text-amber-400">2.</span> Queda prohibido modificar cualquier configuración sin seguir el protocolo de autorización establecido por el departamento de TI.</p>
+            </div>
         </footer>
-
     </div>
 
 </body>

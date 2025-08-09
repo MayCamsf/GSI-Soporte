@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía para Encontrar tu Número de Serie</title>
+    <title>Guía para encontrar tu número de serie</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,8 +12,8 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #1A202C; /* Dark background */
-            color: #E2E8F0; /* Light gray text */
+            background-color: #1A202C;
+            color: #E2E8F0;
         }
         .chart-container {
             position: relative;
@@ -41,27 +41,19 @@
 
     <div class="container mx-auto p-4 md:p-8 max-w-4xl">
 
-        <!-- INICIO: Espacio para el logo de la empresa -->
         <div class="flex justify-center mb-1 mt-4">
-            <!-- INSTRUCCIONES:
-                 1. Reemplaza la URL en 'src' con la de tu logo.
-                 2. Ajusta el tamaño cambiando la clase 'w-56'.
-                    - Para hacerlo más pequeño, usa: w-40, w-48.
-                    - Para hacerlo más grande, usa: w-64, w-72.
-            -->
-            <img src="logo.png" alt="Logo de la Empresa" class="w-64 h-auto">
+            <img src="logo.png" alt="Logo de la Empresa" class="w-56 h-auto">
         </div>
-        <!-- FIN: Espacio para el logo de la empresa -->
 
         <header class="text-center mb-12 mt-4">
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">Encuentra tu Número de Serie</h1>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">Encuentra tu número de serie</h1>
             <p class="text-lg text-[#A0AEC0]">El identificador único de tu equipo, explicado de forma sencilla.</p>
         </header>
 
         <main class="space-y-8">
 
             <section class="card">
-                <h2 class="text-2xl font-bold mb-4 text-center text-white">1. El Método Más Fácil: Revisa tu Equipo Físicamente</h2>
+                <h2 class="text-2xl font-bold mb-4 text-center text-white">1. El método más fácil: revisa tu equipo físicamente</h2>
                 <p class="text-center text-[#A0AEC0] mb-6">La forma más rápida es buscar una etiqueta pegada directamente en tu computadora.</p>
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
                     <div class="bg-[#4A5568] p-6 rounded-lg">
@@ -71,75 +63,113 @@
                     </div>
                     <div class="bg-[#4A5568] p-6 rounded-lg">
                         <div class="text-5xl mb-3">🖥️</div>
-                        <h3 class="font-bold text-lg text-white">Computadoras de Escritorio</h3>
+                        <h3 class="font-bold text-lg text-white">Computadoras de escritorio</h3>
                         <p class="text-sm text-[#CBD5E0]">Busca en los costados o en la parte de atrás de la torre.</p>
                     </div>
                     <div class="bg-[#4A5568] p-6 rounded-lg">
                         <div class="text-5xl mb-3">⌨️</div>
-                        <h3 class="font-bold text-lg text-white">Equipos "Todo en Uno"</h3>
+                        <h3 class="font-bold text-lg text-white">Equipos "todo en uno"</h3>
                         <p class="text-sm text-[#CBD5E0]">Generalmente, la etiqueta está en la parte trasera del monitor.</p>
                     </div>
                 </div>
             </section>
             
             <section class="card">
-                <h2 class="text-2xl font-bold mb-4 text-center text-white">2. Método desde el Sistema (Windows)</h2>
-                <p class="text-center text-[#A0AEC0] mb-6">Si no ves la etiqueta, puedes obtener el número siguiendo estos pasos.</p>
-                <div class="bg-[#4A5568] p-4 rounded-lg">
-                    <h4 class="font-bold text-lg text-center text-white">Pasos para Obtener el Número de Serie</h4>
-                    <ol class="list-decimal list-inside text-sm text-[#CBD5E0] mt-2 space-y-1">
-                        <li>Ve al menú Inicio y escribe <strong class="text-white">PowerShell</strong>.</li>
-                        <li>Haz clic en la aplicación "Windows PowerShell" que aparece.</li>
-                        <li>En la ventana azul que se abre, copia y pega el siguiente comando y presiona Enter:</li>
+                <h2 class="text-2xl font-bold mb-4 text-center text-white">2. Métodos desde el sistema (Windows)</h2>
+                <p class="text-center text-[#A0AEC0] mb-6">Si no encuentras la etiqueta, puedes obtener el número usando comandos. Te presentamos dos opciones, ya que algunas computadoras pueden tener una de ellas deshabilitada.</p>
+                
+                <div class="bg-[#4A5568] p-4 rounded-lg mt-4">
+                    <h3 class="font-bold text-lg text-center text-white">Opción A: Usando PowerShell (recomendado)</h3>
+                    <ol class="list-decimal list-inside text-sm text-[#CBD5E0] mt-2 space-y-2">
+                        <li>Haz clic en el botón de <strong class="text-white">Inicio</strong> (el ícono de Windows en la esquina inferior izquierda) y escribe la palabra <strong class="text-white">PowerShell</strong>.
+                           
+                            <div class="mt-2 flex justify-center">
+                                <img src="power.png" alt="Ejemplo del paso 1" class="w-full h-auto rounded-md border border-[#718096]">
+                            </div>
+                                               </li>
+                        <li>Copia el siguiente texto, pégalo en la ventana azul y presiona la tecla <strong class="text-white">Enter</strong>:
+                            <code class="bg-[#1A202C] text-white p-2 my-2 rounded block text-xs font-mono text-center">Get-CimInstance -ClassName Win32_BIOS | Select-Object SerialNumber</code>
+                        </li>
+                        <li>El número de serie aparecerá debajo del comando que pegaste.
+                            <div class="mt-2 flex justify-center">
+                               <img src="serie.png" alt="Ejemplo del resultado" class="w-full h-auto rounded-md border border-[#718096]">
+                            </div>
+                        </li>
                     </ol>
-                    <code class="bg-[#1A202C] text-white p-2 mt-2 rounded block text-xs font-mono text-center">Get-CimInstance -ClassName Win32_BIOS | Select-Object SerialNumber</code>
+                </div>
+
+                <div class="bg-[#4A5568] p-4 rounded-lg mt-6">
+                    <h3 class="font-bold text-lg text-center text-white">Opción B: Usando el símbolo del sistema (CMD)</h3>
+                    <ol class="list-decimal list-inside text-sm text-[#CBD5E0] mt-2 space-y-2">
+                        <li>Haz clic en el botón de <strong class="text-white">Inicio</strong> y escribe las letras <strong class="text-white">CMD</strong>.
+                            <div class="mt-2 flex justify-center">
+                                <img src="cmdw.png" alt="Ejemplo del paso 1 para CMD" class="w-full h-auto rounded-md border border-[#718096]">
+                            </div>
+                        </li>
+                        <li>En los resultados, haz clic en la aplicación que dice <strong class="text-white">"Símbolo del sistema"</strong>. Se abrirá una ventana con fondo negro.
+                            <div class="mt-2 flex justify-center">
+                                <img src="cmda.png" alt="Ejemplo del paso 2 para CMD" class="w-full h-auto rounded-md border border-[#718096]">
+                            </div>
+                        </li>
+                        <li>Copia el siguiente texto, pégalo en la ventana negra y presiona la tecla <strong class="text-white">Enter</strong>:
+                            <code class="bg-[#1A202C] text-white p-2 my-2 rounded block text-xs font-mono text-center">wmic bios get serialnumber</code>
+                        </li>
+                        <li>El número de serie aparecerá en la siguiente línea.
+                            <div class="mt-2 flex justify-center">
+                                <img src="seriea.png" alt="Ejemplo del resultado para CMD" class="w-full h-auto rounded-md border border-[#718096]">
+                            </div>
+                        </li>
+                    </ol>
                 </div>
             </section>
 
             <section class="card">
-                <h2 class="text-2xl font-bold mb-4 text-center text-white">Comparación de Métodos</h2>
+                <h2 class="text-2xl font-bold mb-4 text-center text-white">Comparación de métodos</h2>
                 <div class="chart-container">
                     <canvas id="methodsChart"></canvas>
                 </div>
                 <div class="text-xs text-[#A0AEC0] mt-4 p-3 bg-[#4A5568] rounded-lg">
-                    <p><strong class="text-white">¿Qué significa "Ver en BIOS/UEFI"?</strong></p>
+                    <p><strong class="text-white">¿Qué significa "ver en BIOS/UEFI"?</strong></p>
                     <p class="mt-1">Es el menú de configuración base de la computadora que se carga antes que Windows. Contiene información del hardware, pero es un método recomendado solo para usuarios con más experiencia técnica.</p>
                 </div>
             </section>
 
             <section class="card">
-                <h2 class="text-2xl font-bold mb-4 text-center text-white">3. Para Equipos de la Empresa</h2>
+                <h2 class="text-2xl font-bold mb-4 text-center text-white">3. Para equipos de la empresa</h2>
                 <p class="text-center text-[#A0AEC0] mb-8">Si tu equipo es propiedad de la empresa, el proceso es un poco diferente. Sigue esta guía:</p>
                 <div class="space-y-6">
                     <div class="flex items-start space-x-4">
                         <div class="flex-shrink-0 w-10 h-10 bg-[#38B2AC] text-white text-xl font-bold rounded-full flex items-center justify-center">1</div>
                         <div>
-                            <h3 class="font-bold text-lg text-white">Buscar Etiqueta de Activo</h3>
-                            <p class="text-sm text-[#CBD5E0]">Busca una etiqueta de la empresa (a veces llamada "Activo Fijo" o "Asset Tag"), que puede tener un código de barras.</p>
+                            <h3 class="font-bold text-lg text-white">Busca la etiqueta de activo</h3>
+                            <p class="text-sm text-[#CBD5E0]">Busca una etiqueta de la empresa (a veces llamada "activo fijo" o "asset tag"), que puede tener un código de barras.</p>
                         </div>
                     </div>
                     <div class="flex items-start space-x-4">
                         <div class="flex-shrink-0 w-10 h-10 bg-[#38B2AC] text-white text-xl font-bold rounded-full flex items-center justify-center">2</div>
                         <div>
-                            <h3 class="font-bold text-lg text-white">Revisar Software Interno</h3>
-                            <p class="text-sm text-[#CBD5E0]">Busca en tu equipo una aplicación llamada "Portal de la Compañía" o "Centro de Software".</p>
+                            <h3 class="font-bold text-lg text-white">Revisa el software interno</h3>
+                            <p class="text-sm text-[#CBD5E0]">Busca en tu equipo una aplicación llamada "portal de la compañía" o "centro de software".</p>
                         </div>
                     </div>
                     <div class="flex items-start space-x-4 p-4 rounded-lg bg-[#4A5568] border border-teal-500">
                          <div class="flex-shrink-0 w-10 h-10 bg-[#2C5282] text-white text-xl font-bold rounded-full flex items-center justify-center">3</div>
                         <div>
-                            <h3 class="font-bold text-lg text-white">Solución Final: Contactar a Soporte</h3>
-                            <p class="text-sm text-[#CBD5E0]">Si los pasos anteriores no funcionan, simplemente contacta al departamento de Soporte Técnico (TI). ¡Ellos tienen la información y están para ayudarte!</p>
+                            <h3 class="font-bold text-lg text-white">Solución final: contacta a soporte</h3>
+                            <p class="text-sm text-[#CBD5E0]">Si los pasos anteriores no funcionan, simplemente contacta al departamento de soporte técnico (TI). ¡Ellos tienen la información y están para ayudarte!</p>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
 
-        <footer class="text-center mt-12 text-sm text-[#718096]">
-            <p></p>
+        <footer class="mt-20 text-center border-t border-gray-700 pt-10">
+            <h3 class="text-lg font-semibold text-white mb-4">Recuerda que:</h3>
+            <div class="text-gray-400 max-w-2xl mx-auto space-y-2">
+                <p><span class="font-bold text-amber-400">1.</span> Esta guía es un documento de consulta exclusivamente para el proceso de auditoría interna.</p>
+                <p><span class="font-bold text-amber-400">2.</span> Queda prohibido modificar cualquier configuración sin seguir el protocolo de autorización establecido por el departamento de TI.</p>
+            </div>
         </footer>
-
     </div>
 
     <script>
@@ -147,14 +177,14 @@
         const methodsChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Revisión Física', 'Comando en Sistema', 'Ver en BIOS/UEFI'],
+                labels: ['Revisión física', 'Comando en sistema', 'Ver en BIOS/UEFI'],
                 datasets: [{
-                    label: 'Nivel de Facilidad (Más alto = más fácil)',
+                    label: 'Nivel de facilidad (más alto = más fácil)',
                     data: [99, 85, 50],
                     backgroundColor: [
-                        '#38B2AC', // teal
-                        '#4299E1', // blue
-                        '#63B3ED'  // light blue
+                        '#38B2AC',
+                        '#4299E1',
+                        '#63B3ED'
                     ],
                     borderColor: '#4A5568',
                     borderWidth: 1
@@ -190,7 +220,7 @@
                     },
                     title: {
                         display: true,
-                        text: 'Facilidad de cada Método',
+                        text: 'Facilidad de cada método',
                         color: '#FFFFFF',
                         font: {
                             size: 16,

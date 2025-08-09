@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía de Seguridad para Equipos Windows</title>
-    <!-- Tailwind CSS para un diseño moderno y responsivo -->
+    <title>Guía de auditoría para configuración de equipos</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilo base del cuerpo del documento */
+
         body {
-            background-color: #1A202C; /* Fondo oscuro solicitado */
+            background-color: #1A202C;
             font-family: 'Inter', sans-serif;
-            color: #E2E8F0; /* Color de texto claro para contraste */
+            color: #E2E8F0;
         }
-        /* Estilos para los bloques de código */
+
         code {
             background-color: #2D3748;
             color: #A0AEC0;
@@ -28,123 +27,115 @@
 </head>
 <body class="antialiased">
 
-    <!-- Contenedor principal para centrar el contenido -->
     <div class="container mx-auto px-4 py-8 max-w-4xl">
 
-        <!-- INICIO: Espacio para el logo de la empresa -->
+
         <div class="flex justify-center mb-6 mt-4">
-            <!-- INSTRUCCIONES:
-                 1. Reemplaza la URL en 'src' con la de tu logo.
-                 2. Ajusta el tamaño cambiando la clase 'w-56'.
-                    - Para hacerlo más pequeño, usa: w-40, w-48.
-                    - Para hacerlo más grande, usa: w-64, w-72.
-            -->
             <img src="logo.png" alt="Logo de la Empresa" class="w-56 h-auto rounded-md">
         </div>
-        <!-- FIN: Espacio para el logo de la empresa -->
 
-        <!-- Título principal de la guía -->
         <h1 class="text-3xl md:text-4xl font-bold text-center text-white mb-4">
-            Guía para Revisar la Configuración de tu Equipo
+            Guía para la revisión de configuración de equipos
         </h1>
         <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
-            Esta guía te ayudará a entender y revisar algunas configuraciones de seguridad en tu computadora. Sigue estos pasos para verificar si alguna aplicación tiene bloqueado el acceso a internet usando diferentes métodos.
+            Esta guía explica cómo auditar la configuración de seguridad para verificar que un programa o puerto tenga la conexión a internet correctamente bloqueada, de acuerdo a los protocolos de hardening.
         </p>
 
-        <!-- Sección 1: Método Principal (Interfaz Gráfica) -->
         <div class="bg-gray-800 shadow-2xl rounded-xl p-6 md:p-8 mb-10">
             <h2 class="text-2xl font-semibold text-white mb-5 border-b border-gray-700 pb-3">
-                Opción 1: Revisar el Firewall con la Interfaz Gráfica (La más sencilla)
+                Opción 1: Verificación visual de reglas en el firewall (método recomendado)
             </h2>
             <p class="text-gray-300 mb-6">
-                Para proteger tu equipo, el <strong>Firewall de Windows</strong> a veces puede impedir que algunos programas se conecten a internet. Aquí te mostramos cómo revisar esto visualmente.
+                Este método es el más directo para confirmar visualmente que el firewall de Windows está bloqueando una aplicación específica.
             </p>
-            <div class="space-y-6">
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 text-white font-bold text-lg">1</div>
-                    <div class="ml-4">
-                        <h3 class="text-lg font-medium text-white">Abre el Firewall de Windows</h3>
-                        <p class="text-gray-400 mt-1">Ve al menú <strong>Inicio</strong>, escribe <strong>"Firewall de Windows Defender"</strong> y abre la aplicación que dice "con seguridad avanzada".</p>
+            <div class="space-y-4">
+
+                <div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 text-white font-bold text-lg">1</div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium text-white">Abrir el firewall de Windows</h3>
+                            <p class="text-gray-400 mt-1">En el menú <strong>Inicio</strong>, busca <strong>"Firewall de Windows Defender"</strong> y selecciona la opción <strong>"Firewall de Windows Defender con seguridad avanzada"</strong>.</p>
+                        </div>
+                    </div>
+                    <div class="my-6">
+                        <img src="rew.png" alt="Búsqueda del firewall en el menú Inicio" class="w-full max-w-md mx-auto rounded-lg shadow-lg">
                     </div>
                 </div>
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 text-white font-bold text-lg">2</div>
-                    <div class="ml-4">
-                        <h3 class="text-lg font-medium text-white">Busca las "Reglas de entrada"</h3>
-                        <p class="text-gray-400 mt-1">En el menú de la izquierda, haz clic en <strong>"Reglas de entrada"</strong>. Si un programa tiene un ícono de <strong>círculo rojo 🚫</strong>, su conexión está bloqueada.</p>
+
+                <div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 text-white font-bold text-lg">2</div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium text-white">Inspeccionar las "Reglas de salida" y "Reglas de entrada"</h3>
+                            <p class="text-gray-400 mt-1">En la columna izquierda, selecciona <strong>"Reglas de salida"</strong>. Busca en la lista la aplicación o servicio que, por protocolo, debe estar bloqueado. El objetivo es encontrar la regla correspondiente.</p>
+                        </div>
+                    </div>
+                    <div class="my-6">
+                        <img src="fir.png" alt="Ventana del firewall con reglas de salida" class="w-full max-w-md mx-auto rounded-lg shadow-lg">
                     </div>
                 </div>
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 text-white font-bold text-lg">3</div>
-                    <div class="ml-4">
-                        <h3 class="text-lg font-medium text-white">Habilita la regla (si es necesario)</h3>
-                        <p class="text-gray-400 mt-1">Para desbloquearlo, haz clic derecho sobre el programa y selecciona <strong>"Habilitar regla"</strong>. El ícono cambiará a <strong>verde ✅</strong>.</p>
+
+                <div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 text-white font-bold text-lg">3</div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium text-white">Confirmar que la regla esté deshabilitada (bloqueada)</h3>
+                            <p class="text-gray-400 mt-1">Verifica que la regla tenga un <strong>ícono de círculo rojo 🚫</strong> a su izquierda y que en la columna "Acción" diga <strong>"Bloquear"</strong>. Si es así, el bloqueo está aplicado correctamente. Si haces clic derecho, la opción disponible será "Habilitar regla", lo que confirma su estado inactivo.</p>
+                        </div>
+                    </div>
+                    <div class="my-6">
+                        <img src="sad.png" alt="Menú contextual confirmando que una regla está deshabilitada" class="w-full max-w-md mx-auto rounded-lg shadow-lg">
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Sección 2: Otras Alternativas -->
         <div class="bg-gray-800 shadow-2xl rounded-xl p-6 md:p-8">
             <h2 class="text-2xl font-semibold text-white mb-5 border-b border-gray-700 pb-3">
-                Otras Alternativas para Verificar Puertos
+                Verificación avanzada por línea de comandos
             </h2>
             
-            <!-- Alternativa 2: Símbolo del Sistema -->
             <div class="mb-8">
-                <h3 class="text-xl font-semibold text-indigo-400 mb-3">Opción 2: Usar el Símbolo del Sistema (Técnico)</h3>
-                <p class="text-gray-300 mb-4">Esta opción te permite ver una lista de todos los puertos que tu equipo está usando en tiempo real. Es útil para identificar qué programa está usando un puerto específico.</p>
-                <ol class="list-decimal list-inside space-y-3 text-gray-400">
-                    <li>Abre el Símbolo del Sistema: Ve al menú <strong>Inicio</strong>, escribe <code>cmd</code>, haz clic derecho sobre "Símbolo del Sistema" y selecciona <strong>"Ejecutar como administrador"</strong>.</li>
-                    <li>Escribe el siguiente comando y presiona Enter. Esto mostrará todas las conexiones y puertos abiertos:
-                        <pre class="bg-gray-900 text-white p-3 rounded-md mt-2 text-sm overflow-x-auto"><code>netstat -ano</code></pre>
+                <h3 class="text-xl font-semibold text-indigo-400 mb-3">Opción 2: Usar PowerShell para auditar reglas</h3>
+                <p class="text-gray-300 mb-4">PowerShell permite filtrar y verificar rápidamente el estado de las reglas. Se debe ejecutar con privilegios de administrador.</p>
+                <ol class="list-decimal list-inside space-y-4 text-gray-400">
+                    <li><strong>Abrir PowerShell como administrador:</strong> Haz clic derecho en <strong>Inicio</strong> y selecciona <strong>"Terminal (Administrador)"</strong> o <strong>"Windows PowerShell (Administrador)"</strong>.
+                        <div class="my-6">
+                            <img src="power.png" alt="Ejecutar PowerShell como administrador" class="w-full max-w-md mx-auto rounded-lg shadow-lg">
+                        </div>
                     </li>
-                    <li>Busca en la columna "Dirección local" el número de puerto que te interesa (ej. <code>0.0.0.0:8080</code>). En la misma fila, anota el número que aparece al final, en la columna <strong>"PID"</strong>.</li>
-                    <li>Para saber qué programa corresponde a ese PID, abre el <strong>Administrador de Tareas</strong> (Ctrl + Shift + Esc), ve a la pestaña "Detalles" y busca el número de PID.</li>
-                </ol>
-                <p class="text-sm text-gray-500 mt-3">Nota: Este método solo muestra si un puerto está en uso, no si está bloqueado por el firewall. Para desbloquearlo, usa la Opción 1.</p>
-            </div>
-
-            <!-- Alternativa 3: PowerShell -->
-            <div class="mb-8">
-                <h3 class="text-xl font-semibold text-indigo-400 mb-3">Opción 3: Usar PowerShell (Avanzado)</h3>
-                <p class="text-gray-300 mb-4">PowerShell es una línea de comandos más moderna y potente que también te permite gestionar las reglas del firewall.</p>
-                 <ol class="list-decimal list-inside space-y-3 text-gray-400">
-                    <li>Abre PowerShell: Ve al menú <strong>Inicio</strong>, escribe <code>PowerShell</code>, haz clic derecho y selecciona <strong>"Ejecutar como administrador"</strong>.</li>
-                    <li>Para ver una lista de todas las reglas del firewall, puedes usar este comando:
-                        <pre class="bg-gray-900 text-white p-3 rounded-md mt-2 text-sm overflow-x-auto"><code>Get-NetFirewallRule | Where-Object { $_.Enabled -eq 'False' }</code></pre>
-                        <p class="text-sm text-gray-500 mt-1">Este comando te mostrará solo las reglas que están desactivadas (bloqueadas).</p>
+                    <li><strong>Listar todas las reglas de bloqueo activas:</strong> Para ver una lista de todas las reglas cuya acción es "Bloquear", usa el siguiente comando. Esto es útil para una auditoría general.
+                        <pre class="bg-gray-900 text-white p-3 rounded-md mt-2 text-sm overflow-x-auto"><code>Get-NetFirewallRule -Action Block -Enabled True | Select-Object DisplayName, Group, Profile, Direction</code></pre>
+                        <p class="text-sm text-gray-500 mt-1">Esto mostrará el nombre, grupo y dirección de todas las reglas que están activamente bloqueando conexiones.</p>
+                        <div class="my-6">
+                            <img src="xsa.png" alt="Ejemplo de lista de reglas de bloqueo en PowerShell" class="w-full max-w-md mx-auto rounded-lg shadow-lg">
+                        </div>
                     </li>
-                    <li>Si encuentras una regla que quieres activar (por ejemplo, una llamada "Minecraft"), puedes desbloquearla con este comando, reemplazando el nombre:
-                        <pre class="bg-gray-900 text-white p-3 rounded-md mt-2 text-sm overflow-x-auto"><code>Enable-NetFirewallRule -DisplayName "NombreExactoDeLaRegla"</code></pre>
+                    <li><strong>Verificar una regla específica por nombre:</strong> Si necesitas auditar una regla en particular, usa este comando, reemplazando <code>"NombreExactoDeLaRegla"</code>.
+                        <pre class="bg-gray-900 text-white p-3 rounded-md mt-2 text-sm overflow-x-auto"><code>Get-NetFirewallRule -DisplayName "NombreExactoDeLaRegla" | Format-List -Property DisplayName, Enabled, Direction, Action</code></pre>
+                        <p class="text-sm text-gray-500 mt-1">El resultado esperado es <strong>Enabled: True</strong> y <strong>Action: Block</strong>. Esto confirma que la regla está activa y configurada para bloquear.</p>
+                        <div class="my-6">
+                            <img src="qas.png" alt="Ejemplo de comando para verificar una regla específica" class="w-full max-w-md mx-auto rounded-lg shadow-lg">
+                        </div>
                     </li>
                 </ol>
             </div>
 
-            <!-- Alternativa 4: Herramienta en línea -->
             <div>
-                <h3 class="text-xl font-semibold text-indigo-400 mb-3">Opción 4: Usar un Verificador de Puertos en Línea</h3>
-                <p class="text-gray-300 mb-4">Si necesitas saber si un puerto de tu equipo es accesible desde internet (por ejemplo, para un servidor de juegos), puedes usar una herramienta web. Busca en Google "online port checker" o "verificador de puertos online".</p>
-                <p class="text-gray-400">Simplemente ingresa tu dirección IP pública (la página usualmente la detecta automáticamente) y el número de puerto que quieres verificar. La herramienta te dirá si el puerto está abierto o cerrado al exterior.</p>
+                <h3 class="text-xl font-semibold text-indigo-400 mb-3">Opción 3: Usar un verificador de puertos en línea (validación externa)</h3>
+                <p class="text-gray-300 mb-4">Este método es crucial para confirmar que un puerto no solo está bloqueado internamente, sino que es inaccesible desde internet.</p>
+                <p class="text-gray-400">Desde un equipo externo a la red que se está auditando, busca en un navegador "verificador de puertos online" o "online port scanner". Introduce la dirección IP pública del equipo auditado y el número de puerto que debe estar bloqueado. La herramienta debe reportar el puerto como <strong>"Cerrado" (Closed)</strong> o <strong>"Filtrado" (Filtered)</strong>. Un resultado de "Abierto" (Open) indica una falla en el bloqueo.</p>
             </div>
         </div>
 
-        <!-- Nota de advertencia importante -->
-        <div class="mt-10 p-4 bg-yellow-900/30 border-l-4 border-yellow-500 rounded-r-lg">
-            <div class="flex">
-                <div class="flex-shrink-0">
-                    <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 3.001-1.742 3.001H4.42c-1.53 0-2.493-1.667-1.743-3.001l5.58-9.92zM10 13a1 1 0 110-2 1 1 0 010 2zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
-                    </svg>
-                </div>
-                <div class="ml-3">
-                    <h3 class="text-md font-medium text-yellow-300">¡Importante!</h3>
-                    <div class="mt-2 text-sm text-yellow-200">
-                        <p>Recuerda: no cambies ninguna configuración si no estás seguro. Modificar estas reglas sin conocimiento puede afectar la seguridad de tu equipo. Si no te permite hacer cambios, es probable que sea una configuración de la empresa y deberás contactar a soporte técnico.</p>
-                    </div>
-                </div>
+        <footer class="mt-12 text-center border-t border-gray-700 pt-8">
+            <h3 class="text-lg font-semibold text-white mb-4">Aviso de protocolo de seguridad</h3>
+            <div class="text-gray-400 max-w-2xl mx-auto space-y-2">
+                <p><span class="font-bold text-amber-400">1.</span> Esta guía es para uso exclusivo del personal de TI autorizado para realizar auditorías.</p>
+                <p><span class="font-bold text-amber-400">2.</span> La ejecución de estos pasos debe realizarse siguiendo los protocolos de gestión de cambios de la empresa y bajo una solicitud de servicio autorizada.</p>
             </div>
-        </div>
+        </footer>
     </div>
 
 </body>

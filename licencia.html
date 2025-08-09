@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía de Verificación de Licencias Windows</title>
+    <title>Guía de auditoría para licencias de Windows</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,27 +40,23 @@
             color: #63B3ED;
             line-height: 1;
         }
+        .image-container {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
     </style>
 </head>
 <body class="text-gray-300">
 
     <div class="container mx-auto p-4 md:p-8 max-w-7xl">
 
-        <!-- INICIO: Espacio para el logo de la empresa -->
         <div class="flex justify-center mb-4 mt-4">
-            <!-- INSTRUCCIONES:
-                  1. Reemplaza la URL en 'src' con la de tu logo.
-                  2. Ajusta el tamaño cambiando la clase 'w-56'.
-                     - Para hacerlo más pequeño, usa: w-40, w-48.
-                     - Para hacerlo más grande, usa: w-64, w-72.
-            -->
-            <img src="logo.png" alt="Logo de la Empresa" class="w-64 h-auto">
+            <img src="logo.png" alt="Logo de la Empresa" class="w-56 h-auto">
         </div>
-        <!-- FIN: Espacio para el logo de la empresa -->
 
         <header class="text-center mb-12 md:mb-16">
-            <h1 class="text-4xl md:text-6xl font-black text-white text-shadow uppercase tracking-wide">¿Es Original tu Windows?</h1>
-            <p class="text-lg md:text-xl text-blue-300 mt-2">Una guía rápida para verificar la licencia de tu equipo</p>
+            <h1 class="text-4xl md:text-6xl font-black text-white text-shadow">Licenciamiento de Windows</h1>
+            <p class="text-lg md:text-xl text-blue-300 mt-2">¿Es original tu Windows?</p>
         </header>
 
         <section id="why" class="mb-12 md:mb-16">
@@ -68,76 +64,92 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div class="card rounded-xl p-6 shadow-2xl transform hover:scale-105 transition-transform duration-300">
                     <div class="text-6xl mb-4 text-red-400">🛡️</div>
-                    <h3 class="text-2xl font-bold mb-2 text-white">Evita Virus y Fraudes</h3>
-                    <p>Un Windows no original te expone a software malicioso que puede robar información importante de la empresa.</p>
+                    <h3 class="text-2xl font-bold mb-2 text-white">Mitigación de riesgos</h3>
+                    <p>El software no genuino es un vector de ataque común. Verificar la licencia asegura que el sistema no ha sido comprometido por activadores maliciosos.</p>
                 </div>
                 <div class="card rounded-xl p-6 shadow-2xl transform hover:scale-105 transition-transform duration-300">
                     <div class="text-6xl mb-4 text-amber-400">⚖️</div>
-                    <h3 class="text-2xl font-bold mb-2 text-white">Cumple con la Ley</h3>
-                    <p>Usar software sin licencia puede traer problemas legales y multas para la compañía.</p>
+                    <h3 class="text-2xl font-bold mb-2 text-white">Cumplimiento normativo</h3>
+                    <p>Asegurar que la organización cumple con los acuerdos de licencia de software para evitar sanciones económicas y repercusiones legales.</p>
                 </div>
                 <div class="card rounded-xl p-6 shadow-2xl transform hover:scale-105 transition-transform duration-300">
                     <div class="text-6xl mb-4 text-green-400">⚙️</div>
-                    <h3 class="text-2xl font-bold mb-2 text-white">Aprovecha Windows al 100%</h3>
-                    <p>Con una licencia original, recibes actualizaciones de seguridad y tienes acceso a todas las herramientas y al soporte técnico.</p>
+                    <h3 class="text-2xl font-bold mb-2 text-white">Integridad del sistema</h3>
+                    <p>Una licencia válida garantiza el acceso a actualizaciones críticas de seguridad, un pilar fundamental en cualquier estrategia de hardening.</p>
                 </div>
             </div>
         </section>
 
         <section id="how-to" class="mb-12 md:mb-16">
-            <h2 class="text-3xl font-bold text-center mb-8 text-white">¿Cómo lo Verifico?</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <h2 class="text-3xl font-bold text-center mb-8 text-white">Protocolo de verificación de activación</h2>
+            
+            <div class="card rounded-xl p-6 shadow-2xl mb-8">
+                <h3 class="text-2xl font-bold mb-4 text-center text-white">Método universal (línea de comandos)</h3>
+                <p class="text-center text-gray-400 mb-6">Este método es el más fiable, funciona en todas las versiones de Windows (11, 10, 7, Vista) y proporciona información clara sobre la activación.</p>
+                <div class="space-y-4">
+                    <div class="bg-gray-900/50 p-4 rounded-lg">
+                        <p class="font-semibold text-blue-300">Paso 1: Abrir terminal como administrador</p>
+                        <p class="text-sm">En la barra de búsqueda, escribir `cmd` o `powershell`. Hacer clic derecho sobre el resultado y seleccionar "Ejecutar como administrador".</p>
+                        <div class="image-container max-w-lg mx-auto">
+                            <img src="cmdw.png" alt="Ejemplo de cómo abrir CMD como administrador" class="rounded-lg w-full h-auto object-cover border border-gray-600">
+                        </div>
+                    </div>
+                    <div class="text-center flow-arrow">↓</div>
+                    <div class="bg-gray-900/50 p-4 rounded-lg">
+                        <p class="font-semibold text-blue-300">Paso 2: Ejecutar el comando de estado</p>
+                        <p class="text-sm">En la terminal (ventana negra o azul), escribir el siguiente comando y presionar **Enter**:</p>
+                        <p class="font-mono bg-black/50 p-2 my-2 rounded-md text-center text-white">slmgr /xpr</p>
+                        <p class="text-sm mt-2"><span class="font-bold text-green-400">Resultado esperado:</span> El mensaje debe indicar "El equipo está activado de forma permanente". Este es el estado correcto para licencias OEM y Retail.</p>
+                        <p class="text-sm mt-2"><span class="font-bold text-red-400">Acción requerida:</span> Si el mensaje muestra una fecha de expiración, indica una licencia temporal (Evaluación o Volumen). Si la licencia es de tipo Volumen (KMS) en un equipo que no debería tenerla, debe ser documentado como una anomalía.</p>
+                        <div class="image-container max-w-lg mx-auto">
+                            <img src="actsq.png" alt="Ejemplo del resultado del comando slmgr" class="rounded-lg w-full h-auto object-cover border border-gray-600">
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <h3 class="text-2xl font-bold text-center mt-16 mb-8 text-white">Método gráfico (GUI) por sistema operativo</h3>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
                 <div class="card rounded-xl p-6 shadow-2xl">
-                    <h3 class="text-2xl font-bold mb-4 text-center text-white">Opción 1: Revisión Técnica (CMD)</h3>
-                    <p class="text-center text-gray-400 mb-6">Para una revisión más detallada y precisa.</p>
+                    <h4 class="text-xl font-bold mb-4 text-center text-white">Windows 11 y 10</h4>
                     <div class="space-y-4">
                         <div class="bg-gray-900/50 p-4 rounded-lg">
-                            <p class="font-semibold text-blue-300">Paso 1: Abrir una ventana de comandos</p>
-                            <p class="text-sm">Presiona la tecla Windows, escribe `cmd` y elige "Ejecutar como administrador".</p>
-                        </div>
-                        <div class="text-center flow-arrow">↓</div>
-                        <div class="bg-gray-900/50 p-4 rounded-lg">
-                            <p class="font-semibold text-blue-300">Paso 2: Revisa si la licencia vence</p>
-                            <p class="font-mono bg-black/50 p-2 rounded-md text-center text-white">slmgr /xpr</p>
-                            <div class="mt-2 text-sm">
-                                <p><span class="font-bold text-green-400">Correcto:</span> Dice que está "activado de forma permanente".</p>
-                                <p><span class="font-bold text-red-400">Alerta:</span> Muestra una fecha en la que va a expirar.</p>
+                            <p class="font-semibold text-blue-300">Paso 1: Acceder a 'Activación'</p>
+                            <p class="text-sm">Ir a **Inicio > Configuración**. En Win10, seleccionar **Actualización y seguridad**. En Win11, seleccionar **Sistema**. Luego, en el menú lateral, hacer clic en **Activación**.</p>
+                            <div class="image-container max-w-sm mx-auto">
+                                <img src="act.png" alt="Menú de Activación en Configuración" class="rounded-lg w-full h-auto object-cover border border-gray-600">
                             </div>
                         </div>
-                        <div class="text-center flow-arrow">↓</div>
                         <div class="bg-gray-900/50 p-4 rounded-lg">
-                            <p class="font-semibold text-blue-300">Paso 3: Conoce el tipo de licencia</p>
-                            <p class="font-mono bg-black/50 p-2 rounded-md text-center text-white">slmgr /dli</p>
-                            <p class="mt-2 text-sm">Busca donde dice "Canal de la clave". Si ves `VOLUME_KMS` y no es una laptop de la empresa, es una señal de alerta.</p>
+                            <p class="font-semibold text-blue-300">Paso 2: Interpretar el estado</p>
+                            <p class="text-sm"><span class="font-bold text-green-400">Resultado esperado:</span> "Windows está activado con una licencia digital" o "...vinculada a tu cuenta de Microsoft".</p>
+                            <p class="text-sm mt-2"><span class="font-bold text-red-400">Señal de alerta (KMS):</span> Si el mensaje indica "Windows está activado a través del servicio de activación de su organización", se debe validar. Este método es legítimo para clientes corporativos, pero el auditor debe confirmar si el equipo auditado pertenece a dicho entorno. Si no, es una clara señal de activación irregular.</p>
+                            <div class="image-container max-w-sm mx-auto">
+                                <img src="acts.png" alt="Estado de activación en Windows" class="rounded-lg w-full h-auto object-cover border border-gray-600">
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="card rounded-xl p-6 shadow-2xl">
-                    <h3 class="text-2xl font-bold mb-4 text-center text-white">Opción 2: Revisión Rápida (Configuración)</h3>
-                    <p class="text-center text-gray-400 mb-6">Una forma fácil y visual de comprobarlo.</p>
+                    <h4 class="text-xl font-bold mb-4 text-center text-white">Windows 7 y Vista</h4>
                     <div class="space-y-4">
                         <div class="bg-gray-900/50 p-4 rounded-lg">
-                            <p class="font-semibold text-blue-300">Paso 1: Ve a "Activación"</p>
-                            <p class="text-sm">En el menú de Inicio, ve a Configuración y busca la sección de "Activación".</p>
+                            <p class="font-semibold text-blue-300">Paso 1: Acceder a 'Propiedades del sistema'</p>
+                            <p class="text-sm">Hacer clic en **Inicio**, luego clic derecho sobre **Equipo** (o "Computer") y seleccionar **Propiedades**.</p>
+                             <div class="image-container max-w-sm mx-auto">
+                                <img src="win7-computer-properties.png" alt="Acceder a propiedades de Equipo en Windows 7" class="rounded-lg w-full h-auto object-cover border border-gray-600">
+                            </div>
                         </div>
-                        <div class="text-center flow-arrow">↓</div>
                         <div class="bg-gray-900/50 p-4 rounded-lg">
-                            <p class="font-semibold text-blue-300">Paso 2: Lee el mensaje</p>
-                            <div class="mt-2 text-sm space-y-2">
-                                <div>
-                                    <p class="font-bold text-green-400">Correcto:</p>
-                                    <ul class="list-disc list-inside ml-4">
-                                        <li>"Windows está activado con una licencia digital".</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <p class="font-bold text-red-400">Sospechoso:</p>
-                                    <ul class="list-disc list-inside ml-4">
-                                        <li>"Windows está activado a través del servicio de activación de su organización".</li>
-                                    </ul>
-                                </div>
+                            <p class="font-semibold text-blue-300">Paso 2: Localizar la sección 'Activación de Windows'</p>
+                            <p class="text-sm">En la parte inferior de la ventana, se encontrará el estado de la activación.</p>
+                            <p class="text-sm mt-2"><span class="font-bold text-green-400">Resultado esperado:</span> Debe mostrar el mensaje "Windows está activado" junto con el logo de "Pregunte por software original de Microsoft".</p>
+                            <p class="text-sm mt-2"><span class="font-bold text-red-400">Acción requerida:</span> Si muestra un contador de días restantes para la activación, o si falta la sección por completo, la licencia no es válida o nunca ha sido activada. Documentar el hallazgo.</p>
+                             <div class="image-container max-w-sm mx-auto">
+                                <img src="win7-activated.png" alt="Ventana de activación en Windows 7" class="rounded-lg w-full h-auto object-cover border border-gray-600">
                             </div>
                         </div>
                     </div>
@@ -146,8 +158,8 @@
         </section>
 
         <section id="types" class="mb-12 md:mb-16">
-            <h2 class="text-3xl font-bold text-center mb-2 text-white">Tipos de Licencia Más Comunes</h2>
-            <p class="text-center text-gray-400 mb-8">Entender de dónde viene tu licencia te ayuda a saber si es legítima.</p>
+            <h2 class="text-3xl font-bold text-center mb-2 text-white">Tipos de licencia más comunes</h2>
+            <p class="text-center text-gray-400 mb-8">Entender el tipo de licencia ayuda a identificar anomalías durante la auditoría.</p>
             <div class="card rounded-xl p-6 shadow-2xl">
                 <div class="chart-container">
                     <canvas id="licenseTypesChart"></canvas>
@@ -156,50 +168,53 @@
         </section>
 
         <section id="red-flags" class="mb-12 md:mb-16">
-            <h2 class="text-3xl font-bold text-center mb-8 text-white">Focos Rojos de Licencias Falsas</h2>
+            <h2 class="text-3xl font-bold text-center mb-8 text-white">Señales de alerta de licencias falsas</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div class="card rounded-xl p-6 shadow-2xl">
-                    <h3 class="text-xl font-bold text-center mb-4 text-white">Principales Indicadores de Riesgo</h3>
+                    <h3 class="text-xl font-bold text-center mb-4 text-white">Indicadores de riesgo a documentar</h3>
                     <div class="chart-container h-64 md:h-80">
                         <canvas id="riskFactorsChart"></canvas>
                     </div>
                 </div>
                 <div class="card rounded-xl p-6 shadow-2xl space-y-4">
                     <div class="flex items-start">
-                        <div class="text-2xl mr-4">💰</div>
+                        <div class="text-2xl mr-4">📦</div>
                         <div>
-                            <h4 class="font-bold text-white">Precios Demasiado Bajos</h4>
-                            <p>Las ofertas con descuentos increíbles suelen ser de licencias falsas o robadas.</p>
+                            <h4 class="font-bold text-white">Software "activador" presente</h4>
+                            <p>La presencia de herramientas como "KMSPico", "AutoKMS" o similares en el sistema es prueba concluyente de una activación ilegal.</p>
                         </div>
                     </div>
                     <div class="flex items-start">
-                        <div class="text-2xl mr-4">📦</div>
+                        <div class="text-2xl mr-4">💰</div>
                         <div>
-                            <h4 class="font-bold text-white">Programas "Activadores"</h4>
-                            <p>Si encuentras programas como "KMSPico" o "AutoKMS", es seguro que la licencia no es original.</p>
+                            <h4 class="font-bold text-white">Licencia de origen dudoso</h4>
+                            <p>Si la licencia fue adquirida a un precio drásticamente reducido o de un vendedor no autorizado, su legitimidad está en riesgo.</p>
                         </div>
                     </div>
                     <div class="flex items-start">
                         <div class="text-2xl mr-4">🔄</div>
                         <div>
-                            <h4 class="font-bold text-white">No se puede actualizar</h4>
-                            <p>Un sistema no original a menudo no puede instalar las últimas actualizaciones de seguridad.</p>
+                            <h4 class="font-bold text-white">Fallos en Windows Update</h4>
+                            <p>Un sistema con activación fraudulenta a menudo tiene bloqueado o alterado el servicio de actualizaciones, lo cual es un riesgo de seguridad crítico.</p>
                         </div>
                     </div>
                      <div class="flex items-start">
                         <div class="text-2xl mr-4">💧</div>
                         <div>
-                            <h4 class="font-bold text-white">Avisos Constantes</h4>
-                            <p>Si siempre aparece el mensaje "Activar Windows", es una clara señal de que algo anda mal.</p>
+                            <h4 class="font-bold text-white">Marca de agua "Activar Windows"</h4>
+                            <p>La persistencia de esta marca de agua en el escritorio indica que el sistema operativo no está activado y opera fuera de cumplimiento.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         
-        <footer class="text-center mt-12 border-t border-gray-700 pt-8">
-            <p class="text-xl font-bold text-white">Lo original es más seguro.</p>
-            <p class="text-gray-400 mt-2">Para proteger tu equipo y la información de la empresa, compra siempre tus licencias en tiendas autorizadas.</p>
+        <footer class="mt-20 text-center border-t border-gray-700 pt-10">
+            <h3 class="text-lg font-semibold text-white mb-4">Recuerda que:</h3>
+            <div class="text-gray-400 max-w-2xl mx-auto space-y-2">
+                <p><span class="font-bold text-amber-400">1.</span> Esta guía es un documento de consulta exclusivamente para el proceso de auditoría interna.</p>
+                <p><span class="font-bold text-amber-400">2.</span> Queda prohibido modificar cualquier configuración sin seguir el protocolo de autorización establecido por el departamento de TI.</p>
+            </div>
         </footer>
 
     </div>
@@ -234,9 +249,9 @@
         };
 
         const licenseData = {
-            labels: ['Comprada en Tienda (Retail)', 'Preinstalada de Fábrica (OEM)', 'Corporativa (Volumen/KMS)'].map(label => wrapText(label, 16)),
+            labels: ['Comprada en tienda (Retail)', 'Preinstalada de fábrica (OEM)', 'Corporativa (Volumen/KMS)'].map(label => wrapText(label, 16)),
             datasets: [{
-                label: 'Nivel de Riesgo si es Inesperada',
+                label: 'Nivel de riesgo si es inesperada',
                 data: [1, 2, 10],
                 backgroundColor: [
                     'rgba(75, 192, 192, 0.6)',
@@ -284,9 +299,9 @@
         };
 
         const riskData = {
-            labels: ['Programas "Activadores"', 'Precio muy bajo', 'Licencia de tipo incorrecto (KMS)'],
+            labels: ['Software "activador"', 'Precio muy bajo', 'Licencia de tipo incorrecto (KMS)'],
             datasets: [{
-                label: 'Factores de Riesgo',
+                label: 'Factores de riesgo',
                 data: [50, 25, 25],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.8)',
