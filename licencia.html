@@ -56,29 +56,8 @@
 
         <header class="text-center mb-12 md:mb-16">
             <h1 class="text-4xl md:text-6xl font-black text-white text-shadow">Licenciamiento de Windows</h1>
-            <p class="text-lg md:text-xl text-blue-300 mt-2">¿Es original tu Windows?</p>
+            <p class="text-lg md:text-xl text-blue-300 mt-2">¿Es original Windows?</p>
         </header>
-
-        <section id="why" class="mb-12 md:mb-16">
-            <h2 class="text-3xl font-bold text-center mb-8 text-white">¿Por qué es importante verificarlo?</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="card rounded-xl p-6 shadow-2xl transform hover:scale-105 transition-transform duration-300">
-                    <div class="text-6xl mb-4 text-red-400">🛡️</div>
-                    <h3 class="text-2xl font-bold mb-2 text-white">Mitigación de riesgos</h3>
-                    <p>El software no genuino es un vector de ataque común. Verificar la licencia asegura que el sistema no ha sido comprometido por activadores maliciosos.</p>
-                </div>
-                <div class="card rounded-xl p-6 shadow-2xl transform hover:scale-105 transition-transform duration-300">
-                    <div class="text-6xl mb-4 text-amber-400">⚖️</div>
-                    <h3 class="text-2xl font-bold mb-2 text-white">Cumplimiento normativo</h3>
-                    <p>Asegurar que la organización cumple con los acuerdos de licencia de software para evitar sanciones económicas y repercusiones legales.</p>
-                </div>
-                <div class="card rounded-xl p-6 shadow-2xl transform hover:scale-105 transition-transform duration-300">
-                    <div class="text-6xl mb-4 text-green-400">⚙️</div>
-                    <h3 class="text-2xl font-bold mb-2 text-white">Integridad del sistema</h3>
-                    <p>Una licencia válida garantiza el acceso a actualizaciones críticas de seguridad, un pilar fundamental en cualquier estrategia de hardening.</p>
-                </div>
-            </div>
-        </section>
 
         <section id="how-to" class="mb-12 md:mb-16">
             <h2 class="text-3xl font-bold text-center mb-8 text-white">Protocolo de verificación de activación</h2>
@@ -137,22 +116,43 @@
                     <h4 class="text-xl font-bold mb-4 text-center text-white">Windows 7 y Vista</h4>
                     <div class="space-y-4">
                         <div class="bg-gray-900/50 p-4 rounded-lg">
-                            <p class="font-semibold text-blue-300">Paso 1: Acceder a 'Propiedades del sistema'</p>
-                            <p class="text-sm">Hacer clic en "Inicio", luego clic derecho sobre "Equipo" (o "Computer") y seleccionar "Propiedades".</p>
+                            <p class="font-semibold text-blue-300">Paso 1: Abrir Propiedades de Equipo</p>
+                            <p class="text-sm">En el menú "Inicio", haz clic derecho en "Equipo" y selecciona "Propiedades".</p>
                              <div class="image-container max-w-sm mx-auto">
-                                <img src="win7-computer-properties.png" alt="Acceder a propiedades de Equipo en Windows 7" class="rounded-lg w-full h-auto object-cover border border-gray-600">
+                                <img src="cpo.png" alt="Acceder a propiedades de Equipo en Windows 7" class="rounded-lg w-full h-auto object-cover border border-gray-600">
                             </div>
                         </div>
                         <div class="bg-gray-900/50 p-4 rounded-lg">
-                            <p class="font-semibold text-blue-300">Paso 2: Localizar la sección 'Activación de Windows'</p>
-                            <p class="text-sm">En la parte inferior de la ventana, se encontrará el estado de la activación.</p>
-                            <p class="text-sm mt-2"><span class="font-bold text-green-400">Resultado esperado:</span> Debe mostrar el mensaje "Windows está activado" junto con el logo de "Pregunte por software original de Microsoft".</p>
-                            <p class="text-sm mt-2"><span class="font-bold text-red-400">Acción requerida:</span> Si muestra un contador de días restantes para la activación, o si falta la sección por completo, la licencia no es válida o nunca ha sido activada. Documentar el hallazgo.</p>
+                            <p class="font-semibold text-blue-300">Paso 2: Ver en información básica del equipo</p>
+                            <p class="text-sm">En la parte inferior de la ventana, revisa la sección "Activación de Windows" para ver el estado de la licencia.</p>
+                            <p class="text-sm mt-2"><span class="font-bold text-green-400">Resultado esperado:</span> Debe mostrar el mensaje "Windows está activado".</p>
+                            <p class="text-sm mt-2"><span class="font-bold text-red-400">Acción requerida:</span> Si muestra un contador de días o falta la sección, la licencia no es válida. Se debe documentar.</p>
                              <div class="image-container max-w-sm mx-auto">
-                                <img src="win7-activated.png" alt="Ventana de activación en Windows 7" class="rounded-lg w-full h-auto object-cover border border-gray-600">
+                                <img src="uyre.png" alt="Ventana de activación en Windows 7" class="rounded-lg w-full h-auto object-cover border border-gray-600">
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why" class="mb-12 md:mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-white">¿Por qué es importante verificarlo?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="card rounded-xl p-6 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-6xl mb-4 text-red-400">🛡️</div>
+                    <h3 class="text-2xl font-bold mb-2 text-white">Mitigación de riesgos</h3>
+                    <p>El software no genuino es un vector de ataque común. Verificar la licencia asegura que el sistema no ha sido comprometido por activadores maliciosos.</p>
+                </div>
+                <div class="card rounded-xl p-6 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-6xl mb-4 text-amber-400">⚖️</div>
+                    <h3 class="text-2xl font-bold mb-2 text-white">Cumplimiento normativo</h3>
+                    <p>Asegurar que la organización cumple con los acuerdos de licencia de software para evitar sanciones económicas y repercusiones legales.</p>
+                </div>
+                <div class="card rounded-xl p-6 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-6xl mb-4 text-green-400">⚙️</div>
+                    <h3 class="text-2xl font-bold mb-2 text-white">Integridad del sistema</h3>
+                    <p>Una licencia válida garantiza el acceso a actualizaciones críticas de seguridad, un pilar fundamental en cualquier estrategia de hardening.</p>
                 </div>
             </div>
         </section>
@@ -210,10 +210,9 @@
         </section>
         
         <footer class="mt-20 text-center border-t border-gray-700 pt-10">
-            <h3 class="text-lg font-semibold text-white mb-4">Recuerda que:</h3>
+            <h3 class="text-lg font-semibold text-white mb-4">Recuerda que</h3>
             <div class="text-gray-400 max-w-2xl mx-auto space-y-2">
-                <p><span class="font-bold text-amber-400">1.</span> Esta guía es un documento de consulta exclusivamente para el proceso de auditoría interna.</p>
-                <p><span class="font-bold text-amber-400">2.</span> Queda prohibido modificar cualquier configuración sin seguir el protocolo de autorización establecido por el departamento de TI.</p>
+                <p><span class="font-bold text-white-400">Esta guía es un documento de consulta exclusivamente para el proceso de auditoría interna. Queda prohibido modificar cualquier configuración sin seguir el protocolo de autorización establecido por el departamento de TI.</p>
             </div>
         </footer>
 

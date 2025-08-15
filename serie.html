@@ -46,15 +46,15 @@
         </div>
 
         <header class="text-center mb-12 mt-4">
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">Encuentra tu número de serie</h1>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">Encuentra el número de serie de tu equipo</h1>
             <p class="text-lg text-[#A0AEC0]">El identificador único de tu equipo, explicado de forma sencilla.</p>
         </header>
 
         <main class="space-y-8">
 
             <section class="card">
-                <h2 class="text-2xl font-bold mb-4 text-center text-white">1. El método más fácil: revisa tu equipo físicamente</h2>
-                <p class="text-center text-[#A0AEC0] mb-6">La forma más rápida es buscar una etiqueta pegada directamente en tu computadora.</p>
+                <h2 class="text-2xl font-bold mb-4 text-center text-white">1. El método más fácil: revisa el equipo físicamente</h2>
+                <p class="text-center text-[#A0AEC0] mb-6">La forma más rápida es buscar una etiqueta o un holograma pegado directamente en tu computadora.</p>
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
                     <div class="bg-[#4A5568] p-6 rounded-lg">
                         <div class="text-5xl mb-3">💻</div>
@@ -72,6 +72,17 @@
                         <p class="text-sm text-[#CBD5E0]">Generalmente, la etiqueta está en la parte trasera del monitor.</p>
                     </div>
                 </div>
+                
+                <div class="mt-6 p-4 rounded-lg bg-[#2D3748] border-2 border-teal-400">
+                    <div class="flex items-center">
+                        <div class="text-4xl mr-4">✨</div>
+                        <div>
+                            <h3 class="font-bold text-lg text-white">Verificación adicional: El holograma de seguridad</h3>
+                            <p class="text-sm text-[#CBD5E0]">Busca un <strong>holograma de seguridad</strong> pegado en el equipo. Comúnmente lo encontrarás en la <strong>parte trasera</strong>, cerca de las ventilas o junto a la etiqueta del número de serie original.</p>
+                        </div>
+                    </div>
+                </div>
+
             </section>
             
             <section class="card">
@@ -82,17 +93,17 @@
                     <h3 class="font-bold text-lg text-center text-white">Opción A: Usando PowerShell (recomendado)</h3>
                     <ol class="list-decimal list-inside text-sm text-[#CBD5E0] mt-2 space-y-2">
                         <li>Haz clic en el botón de <strong class="text-white">Inicio</strong> (el ícono de Windows en la esquina inferior izquierda) y escribe la palabra <strong class="text-white">PowerShell</strong>.
-                           
+                            
                             <div class="mt-2 flex justify-center">
                                 <img src="power.png" alt="Ejemplo del paso 1" class="w-full h-auto rounded-md border border-[#718096]">
                             </div>
-                                               </li>
+                        </li>
                         <li>Copia el siguiente texto, pégalo en la ventana azul y presiona la tecla <strong class="text-white">Enter</strong>:
                             <code class="bg-[#1A202C] text-white p-2 my-2 rounded block text-xs font-mono text-center">Get-CimInstance -ClassName Win32_BIOS | Select-Object SerialNumber</code>
                         </li>
                         <li>El número de serie aparecerá debajo del comando que pegaste.
                             <div class="mt-2 flex justify-center">
-                               <img src="serie.png" alt="Ejemplo del resultado" class="w-full h-auto rounded-md border border-[#718096]">
+                                <img src="serie.png" alt="Ejemplo del resultado" class="w-full h-auto rounded-md border border-[#718096]">
                             </div>
                         </li>
                     </ol>
@@ -133,41 +144,12 @@
                     <p class="mt-1">Es el menú de configuración base de la computadora que se carga antes que Windows. Contiene información del hardware, pero es un método recomendado solo para usuarios con más experiencia técnica.</p>
                 </div>
             </section>
-
-            <section class="card">
-                <h2 class="text-2xl font-bold mb-4 text-center text-white">3. Para equipos de la empresa</h2>
-                <p class="text-center text-[#A0AEC0] mb-8">Si tu equipo es propiedad de la empresa, el proceso es un poco diferente. Sigue esta guía:</p>
-                <div class="space-y-6">
-                    <div class="flex items-start space-x-4">
-                        <div class="flex-shrink-0 w-10 h-10 bg-[#38B2AC] text-white text-xl font-bold rounded-full flex items-center justify-center">1</div>
-                        <div>
-                            <h3 class="font-bold text-lg text-white">Busca la etiqueta de activo</h3>
-                            <p class="text-sm text-[#CBD5E0]">Busca una etiqueta de la empresa (a veces llamada "activo fijo" o "asset tag"), que puede tener un código de barras.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-4">
-                        <div class="flex-shrink-0 w-10 h-10 bg-[#38B2AC] text-white text-xl font-bold rounded-full flex items-center justify-center">2</div>
-                        <div>
-                            <h3 class="font-bold text-lg text-white">Revisa el software interno</h3>
-                            <p class="text-sm text-[#CBD5E0]">Busca en tu equipo una aplicación llamada "portal de la compañía" o "centro de software".</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-4 p-4 rounded-lg bg-[#4A5568] border border-teal-500">
-                         <div class="flex-shrink-0 w-10 h-10 bg-[#2C5282] text-white text-xl font-bold rounded-full flex items-center justify-center">3</div>
-                        <div>
-                            <h3 class="font-bold text-lg text-white">Solución final: contacta a soporte</h3>
-                            <p class="text-sm text-[#CBD5E0]">Si los pasos anteriores no funcionan, simplemente contacta al departamento de soporte técnico (TI). ¡Ellos tienen la información y están para ayudarte!</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </main>
 
         <footer class="mt-20 text-center border-t border-gray-700 pt-10">
-            <h3 class="text-lg font-semibold text-white mb-4">Recuerda que:</h3>
+            <h3 class="text-lg font-semibold text-white mb-4">Recuerda que</h3>
             <div class="text-gray-400 max-w-2xl mx-auto space-y-2">
-                <p><span class="font-bold text-amber-400">1.</span> Esta guía es un documento de consulta exclusivamente para el proceso de auditoría interna.</p>
-                <p><span class="font-bold text-amber-400">2.</span> Queda prohibido modificar cualquier configuración sin seguir el protocolo de autorización establecido por el departamento de TI.</p>
+                <p><span class="font-bold text-white-400">Esta guía es un documento de consulta exclusivamente para el proceso de auditoría interna. Queda prohibido modificar cualquier configuración sin seguir el protocolo de autorización establecido por el departamento de TI.</p>
             </div>
         </footer>
     </div>
@@ -233,9 +215,9 @@
                                 const item = tooltipItems[0];
                                 let label = item.chart.data.labels[item.dataIndex];
                                 if (Array.isArray(label)) {
-                                  return label.join(' ');
+                                    return label.join(' ');
                                 } else {
-                                  return label;
+                                    return label;
                                 }
                             }
                         }

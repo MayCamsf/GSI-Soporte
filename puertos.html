@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía de auditoría para configuración de equipos</title>
+    <title>Guía de verificación de puertos USB</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
-
         body {
             background-color: #1A202C;
             font-family: 'Inter', sans-serif;
             color: #E2E8F0;
         }
-
-        code {
+        .card {
             background-color: #2D3748;
-            color: #A0AEC0;
-            padding: 0.2rem 0.4rem;
-            border-radius: 0.25rem;
-            font-family: 'Courier New', Courier, monospace;
+        }
+        .note {
+            background-color: #1A202C;
+            border-left: 4px solid #4299E1;
         }
     </style>
 </head>
@@ -29,111 +28,80 @@
 
     <div class="container mx-auto px-4 py-8 max-w-4xl">
 
-
         <div class="flex justify-center mb-6 mt-4">
-            <img src="logo.png" alt="Logo de la Empresa" class="w-56 h-auto rounded-md">
+            <img src="logo.png" alt="Logo de la Empresa" class="w-56 h-auto rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/224x60/1A202C/FFFFFF?text=Logo+de+la+Empresa';">
         </div>
 
         <h1 class="text-3xl md:text-4xl font-bold text-center text-white mb-4">
-            Guía para la revisión de configuración de equipos
+            Protocolo de verificación de puertos USB
         </h1>
         <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
-            Esta guía explica cómo auditar la configuración de seguridad para verificar que un programa o puerto tenga la conexión a internet correctamente bloqueada, de acuerdo a los protocolos de hardening.
+            Guía para que el personal verifique si la política de bloqueo de puertos USB está funcionando correctamente en un equipo.
         </p>
 
-        <div class="bg-gray-800 shadow-2xl rounded-xl p-6 md:p-8 mb-10">
-            <h2 class="text-2xl font-semibold text-white mb-5 border-b border-gray-700 pb-3">
-                Opción 1: Verificación visual de reglas en el firewall (método recomendado)
-            </h2>
+        <div class="card shadow-2xl rounded-xl p-6 md:p-8 mb-10">
+            <div class="flex items-center mb-4">
+                <i class="ph-usb text-3xl text-blue-400 mr-3"></i>
+                <h2 class="text-2xl font-semibold text-white">Verificación funcional de puertos USB</h2>
+            </div>
             <p class="text-gray-300 mb-6">
-                Este método es el más directo para confirmar visualmente que el firewall de Windows está bloqueando una aplicación específica.
+                Este método permite confirmar si los puertos USB están bloqueados mediante una prueba física, sin necesidad de permisos de administrador.
             </p>
-            <div class="space-y-4">
 
+            <div class="space-y-8">
                 <div>
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 text-white font-bold text-lg">1</div>
-                        <div class="ml-4">
-                            <h3 class="text-lg font-medium text-white">Abrir el firewall de Windows</h3>
-                            <p class="text-gray-400 mt-1">En el menú <strong>Inicio</strong>, busca <strong>"Firewall de Windows Defender"</strong> y selecciona la opción <strong>"Firewall de Windows Defender con seguridad avanzada"</strong>.</p>
-                        </div>
-                    </div>
-                    <div class="my-6">
-                        <img src="rew.png" alt="Búsqueda del firewall en el menú Inicio" class="w-full max-w-md mx-auto rounded-lg shadow-lg">
-                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-4">Procedimiento de verificación</h3>
+                    <ol class="list-decimal list-inside space-y-4 text-gray-300 pl-4">
+                        <li>Consigue un dispositivo de almacenamiento USB estándar (memoria USB o pendrive) que sepas que funciona correctamente.</li>
+                        
+                        <li>Inserta la memoria en uno de los puertos USB del equipo que estás revisando.</li>
+                        <div class="my-4"><img src="sdadwqz.png" alt="Insertar memoria USB en un puerto" class="w-full max-w-md mx-auto rounded-lg shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/800x400/4A5568/A0AEC0?text=Paso+2:+Insertar+dispositivo+USB';"></div>
+
+                        <li>Observa la reacción del sistema operativo. Abre el <strong>Explorador de archivos</strong> (ícono de carpeta) y dirígete a <strong>"Este equipo"</strong> para ver si la unidad aparece.</li>
+                    </ol>
                 </div>
+                
+                <hr class="border-gray-600">
 
                 <div>
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 text-white font-bold text-lg">2</div>
-                        <div class="ml-4">
-                            <h3 class="text-lg font-medium text-white">Inspeccionar las "Reglas de salida" y "Reglas de entrada"</h3>
-                            <p class="text-gray-400 mt-1">En la columna izquierda, selecciona <strong>"Reglas de salida"</strong>. Busca en la lista la aplicación o servicio que, por protocolo, debe estar bloqueado. El objetivo es encontrar la regla correspondiente.</p>
+                    <h3 class="text-xl font-semibold text-white mb-4">Interpretación de resultados</h3>
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-green-900/50 p-4 rounded-lg border border-green-500">
+                            <h4 class="text-lg font-bold text-green-300">Resultado A: Puertos bloqueados (Correcto) 👍</h4>
+                            <p class="mt-2">El sistema **no reacciona** a la inserción del dispositivo:</p>
+                            <ul class="list-disc list-inside mt-2 space-y-1">
+                                <li>No se escucha el sonido de conexión de dispositivo.</li>
+                                <li>La memoria USB no aparece en "Este equipo".</li>
+                                <li>No aparece ninguna notificación de nuevo hardware.</li>
+                            </ul>
+                            <p class="mt-3 font-semibold">Conclusión: La política de bloqueo está funcionando correctamente.</p>
                         </div>
-                    </div>
-                    <div class="my-6">
-                        <img src="fir.png" alt="Ventana del firewall con reglas de salida" class="w-full max-w-md mx-auto rounded-lg shadow-lg">
-                    </div>
-                </div>
-
-                <div>
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 text-white font-bold text-lg">3</div>
-                        <div class="ml-4">
-                            <h3 class="text-lg font-medium text-white">Confirmar que la regla esté deshabilitada (bloqueada)</h3>
-                            <p class="text-gray-400 mt-1">Verifica que la regla tenga un <strong>ícono de círculo rojo 🚫</strong> a su izquierda y que en la columna "Acción" diga <strong>"Bloquear"</strong>. Si es así, el bloqueo está aplicado correctamente. Si haces clic derecho, la opción disponible será "Habilitar regla", lo que confirma su estado inactivo.</p>
+                        <div class="bg-red-900/50 p-4 rounded-lg border border-red-500">
+                            <h4 class="text-lg font-bold text-red-300">Resultado B: Puertos activos (Incorrecto) 👎</h4>
+                            <p class="mt-2">El sistema **detecta** el dispositivo:</p>
+                             <ul class="list-disc list-inside mt-2 space-y-1">
+                                <li>Se escucha el sonido de conexión.</li>
+                                <li>La memoria USB aparece listada en "Este equipo".</li>
+                                <li>El equipo está incumpliendo la política y debe ser reportado.</li>
+                            </ul>
+                            <p class="mt-3 font-semibold">Conclusión: El bloqueo no está aplicado. Se requiere acción de TI.</p>
                         </div>
-                    </div>
-                    <div class="my-6">
-                        <img src="sad.png" alt="Menú contextual confirmando que una regla está deshabilitada" class="w-full max-w-md mx-auto rounded-lg shadow-lg">
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="bg-gray-800 shadow-2xl rounded-xl p-6 md:p-8">
-            <h2 class="text-2xl font-semibold text-white mb-5 border-b border-gray-700 pb-3">
-                Verificación avanzada por línea de comandos
-            </h2>
-            
-            <div class="mb-8">
-                <h3 class="text-xl font-semibold text-indigo-400 mb-3">Opción 2: Usar PowerShell para auditar reglas</h3>
-                <p class="text-gray-300 mb-4">PowerShell permite filtrar y verificar rápidamente el estado de las reglas. Se debe ejecutar con privilegios de administrador.</p>
-                <ol class="list-decimal list-inside space-y-4 text-gray-400">
-                    <li><strong>Abrir PowerShell como administrador:</strong> Haz clic derecho en <strong>Inicio</strong> y selecciona <strong>"Terminal (Administrador)"</strong> o <strong>"Windows PowerShell (Administrador)"</strong>.
-                        <div class="my-6">
-                            <img src="power.png" alt="Ejecutar PowerShell como administrador" class="w-full max-w-md mx-auto rounded-lg shadow-lg">
-                        </div>
-                    </li>
-                    <li><strong>Listar todas las reglas de bloqueo activas:</strong> Para ver una lista de todas las reglas cuya acción es "Bloquear", usa el siguiente comando. Esto es útil para una auditoría general.
-                        <pre class="bg-gray-900 text-white p-3 rounded-md mt-2 text-sm overflow-x-auto"><code>Get-NetFirewallRule -Action Block -Enabled True | Select-Object DisplayName, Group, Profile, Direction</code></pre>
-                        <p class="text-sm text-gray-500 mt-1">Esto mostrará el nombre, grupo y dirección de todas las reglas que están activamente bloqueando conexiones.</p>
-                        <div class="my-6">
-                            <img src="xsa.png" alt="Ejemplo de lista de reglas de bloqueo en PowerShell" class="w-full max-w-md mx-auto rounded-lg shadow-lg">
-                        </div>
-                    </li>
-                    <li><strong>Verificar una regla específica por nombre:</strong> Si necesitas auditar una regla en particular, usa este comando, reemplazando <code>"NombreExactoDeLaRegla"</code>.
-                        <pre class="bg-gray-900 text-white p-3 rounded-md mt-2 text-sm overflow-x-auto"><code>Get-NetFirewallRule -DisplayName "NombreExactoDeLaRegla" | Format-List -Property DisplayName, Enabled, Direction, Action</code></pre>
-                        <p class="text-sm text-gray-500 mt-1">El resultado esperado es <strong>Enabled: True</strong> y <strong>Action: Block</strong>. Esto confirma que la regla está activa y configurada para bloquear.</p>
-                        <div class="my-6">
-                            <img src="qas.png" alt="Ejemplo de comando para verificar una regla específica" class="w-full max-w-md mx-auto rounded-lg shadow-lg">
-                        </div>
-                    </li>
-                </ol>
-            </div>
-
-            <div>
-                <h3 class="text-xl font-semibold text-indigo-400 mb-3">Opción 3: Usar un verificador de puertos en línea (validación externa)</h3>
-                <p class="text-gray-300 mb-4">Este método es crucial para confirmar que un puerto no solo está bloqueado internamente, sino que es inaccesible desde internet.</p>
-                <p class="text-gray-400">Desde un equipo externo a la red que se está auditando, busca en un navegador "verificador de puertos online" o "online port scanner". Introduce la dirección IP pública del equipo auditado y el número de puerto que debe estar bloqueado. La herramienta debe reportar el puerto como <strong>"Cerrado" (Closed)</strong> o <strong>"Filtrado" (Filtered)</strong>. Un resultado de "Abierto" (Open) indica una falla en el bloqueo.</p>
-            </div>
+        
+        <div class="note p-6 rounded-lg">
+             <h3 class="text-xl font-semibold text-blue-300 mb-3">Información importante para el personal de TI</h3>
+             <p>Un usuario estándar **no puede deshabilitar hardware**. El bloqueo de puertos USB en un entorno corporativo se debe realizar de forma centralizada por el equipo de TI, usualmente mediante **Directivas de Grupo (GPO)**.</p>
+             <p class="mt-2">La política correcta se encuentra en: <code class="bg-gray-700 text-gray-300">Configuración del equipo > Plantillas administrativas > Sistema > Acceso a almacenamiento extraíble</code>. Allí se deben configurar todas las reglas de "Denegar acceso" según el protocolo de la empresa.</p>
         </div>
 
         <footer class="mt-12 text-center border-t border-gray-700 pt-8">
             <h3 class="text-lg font-semibold text-white mb-4">Aviso de protocolo de seguridad</h3>
             <div class="text-gray-400 max-w-2xl mx-auto space-y-2">
-                <p><span class="font-bold text-amber-400">1.</span> Esta guía es para uso exclusivo del personal de TI autorizado para realizar auditorías.</p>
-                <p><span class="font-bold text-amber-400">2.</span> La ejecución de estos pasos debe realizarse siguiendo los protocolos de gestión de cambios de la empresa y bajo una solicitud de servicio autorizada.</p>
+                <p><span class="font-bold text-amber-400">1.</span> Esta guía es para verificar el estado de los puertos. El bloqueo es una tarea exclusiva del departamento de TI.</p>
+                <p><span class="font-bold text-amber-400">2.</span> Cualquier equipo que no cumpla con el bloqueo debe ser reportado inmediatamente para su correcta configuración.</p>
             </div>
         </footer>
     </div>

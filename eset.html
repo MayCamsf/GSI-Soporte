@@ -45,25 +45,74 @@
 <body class="bg-[#1A202C] text-gray-200">
 
     <div class="container mx-auto p-4 md:p-8">
-        
-        <!-- INICIO: Espacio para el logo de la empresa -->
+
         <div class="flex justify-center mb-1 mt-4">
-            <!-- INSTRUCCIONES:
-                 1. Reemplaza la URL en 'src' con la de tu logo.
-                 2. Ajusta el tamaño cambiando la clase 'w-56'.
-                    - Para hacerlo más pequeño, usa: w-40, w-48.
-                    - Para hacerlo más grande, usa: w-64, w-72.
-            -->
             <img src="logo.png" alt="Logo de la Empresa" class="w-56 h-auto">
         </div>
-        <!-- FIN: Espacio para el logo de la empresa -->
 
         <header class="text-center mb-12 mt-8">
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">Guía rápida del antivirus ESET</h1>
-            <p class="text-lg text-gray-400">Cómo saber si tu equipo está protegido en 3 pasos.</p>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">Antivirus ESET</h1>
+            <p class="text-lg text-gray-400">Cómo saber si el equipo está protegido.</p>
         </header>
 
         <main>
+            <section class="mb-16">
+                <h2 class="text-3xl font-bold text-center text-white mb-8">Verificación Detallada</h2>
+                <div class="space-y-8 max-w-4xl mx-auto">
+                    <div class="bg-gray-800 rounded-xl shadow-lg p-8 border border-gray-700">
+                        <h3 class="text-2xl font-bold text-teal-400 mb-4">Paso 1: Localizar el ícono de ESET</h3>
+                        <p class="text-gray-300 mb-6">Primero, encuentra el ícono del antivirus en la barra de tareas, junto al reloj. Si no está visible, tendrás que expandir los íconos ocultos.</p>
+                        <ol class="list-decimal list-inside text-gray-300 space-y-2 mb-6">
+                            <li>Busca la flecha hacia arriba (^) en la esquina inferior derecha de la pantalla.</li>
+                            <li>Haz clic en ella para mostrar todos los íconos ocultos.</li>
+                            <li>Identifica el ícono de ESET (una 'e' azul o verde).</li>
+                        </ol>
+                        <div class="mt-6 flex justify-center">
+                            <img src="yu.png" alt="Iconos ocultos en la barra de tareas de Windows" class="max-w-lg w-full h-auto rounded-lg border-2 border-gray-600">
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-800 rounded-xl shadow-lg p-8 border border-gray-700">
+                        <h3 class="text-2xl font-bold text-teal-400 mb-4">Paso 2: Checar el estado de protección</h3>
+                        <p class="text-gray-300 mb-6">Una vez localizado el ícono, abre la ventana principal del programa para confirmar que la protección esté activa.</p>
+                        <ol class="list-decimal list-inside text-gray-300 space-y-2 mb-6">
+                            <li>Haz clic derecho sobre el ícono de ESET y selecciona la opción "Abrir ESET...".</li>
+                            <li>En la pantalla principal, verifica que el estado sea <strong class="text-green-400">verde</strong> y muestre el texto <strong class="text-green-400">"Está protegido"</strong>.</li>
+                        </ol>
+                        <div class="mt-6 flex justify-center">
+                            <img src="yut.png" alt="Ventana de ESET mostrando el estado de protección" class="max-w-lg w-full h-auto rounded-lg border-2 border-gray-600">
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-800 rounded-xl shadow-lg p-8 border border-gray-700">
+                        <h3 class="text-2xl font-bold text-teal-400 mb-4">Paso 3: Verificar la licencia</h3>
+                        <p class="text-gray-300 mb-6">Es crucial confirmar que el antivirus cuenta con una licencia comercial válida y que no ha caducado.</p>
+                        <ol class="list-decimal list-inside text-gray-300 space-y-2 mb-6">
+                            <li>En el menú de la izquierda, haz clic en <strong class="text-white">"Ayuda y soporte técnico"</strong>.</li>
+                            <li>En la sección de "Información del producto", comprueba que el estado de la licencia sea <strong class="text-green-400">"Licencia pagada"</strong> o similar, y revisa la fecha de vencimiento.</li>
+                        </ol>
+                        <div class="mt-6 flex justify-center">
+                            <img src="alw.png" alt="Ventana de ESET mostrando una licencia pagada y válida" class="max-w-lg w-full h-auto rounded-lg border-2 border-gray-600">
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-800 rounded-xl shadow-lg p-8 border border-gray-700">
+                        <h3 class="text-2xl font-bold text-teal-400 mb-4">Paso 4: Validar el bloqueo de configuración</h3>
+                        <p class="text-gray-300 mb-6">Finalmente, asegúrate de que la configuración del antivirus no pueda ser modificada por el usuario, lo que garantiza que las políticas de seguridad se mantengan.</p>
+                        <ol class="list-decimal list-inside text-gray-300 space-y-2 mb-6">
+                            <li>En el menú de la izquierda, haz clic en <strong class="text-white">"Configuración"</strong> (el ícono del engrane).</li>
+                            <li>Intenta acceder a <strong class="text-white">"Configuración avanzada"</strong> en la esquina inferior derecha.</li>
+                            <li>El sistema <strong class="text-yellow-400">debe solicitar una contraseña</strong> para poder continuar. Si no pide contraseña, la configuración no está protegida.</li>
+                        </ol>
+                        <div class="mt-6 flex justify-center">
+                            <img src="cir.png" alt="ESET solicitando contraseña para acceder a configuración avanzada" class="max-w-lg w-full h-auto rounded-lg border-2 border-gray-600">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <hr class="border-gray-700 my-16">
+
             <section id="quick-check" class="mb-16">
                 <h2 class="text-3xl font-bold text-center text-white mb-8">Paso 1: Revisa el ícono de ESET</h2>
                 <p class="text-center max-w-3xl mx-auto mb-10 text-gray-400">La forma más fácil de saber si estás protegido es mirar el ícono de ESET (la letra 'e') junto al reloj de tu computadora. El color te dice todo lo que necesitas saber.</p>
@@ -100,10 +149,10 @@
                     </div>
                 </div>
             </section>
-            
+
             <section id="alerts" class="mb-16">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                     <div class="bg-gray-800 rounded-xl shadow-lg p-8 border border-gray-700 order-2 md:order-1">
+                    <div class="bg-gray-800 rounded-xl shadow-lg p-8 border border-gray-700 order-2 md:order-1">
                         <div class="chart-container">
                             <canvas id="alertFrequencyChart"></canvas>
                         </div>
@@ -159,136 +208,137 @@
         </main>
 
         <footer class="mt-20 text-center border-t border-gray-700 pt-10">
-            <h3 class="text-lg font-semibold text-white mb-4">Recuerda que:</h3>
+            <h3 class="text-lg font-semibold text-white mb-4">Recuerda que</h3>
             <div class="text-gray-400 max-w-2xl mx-auto space-y-2">
-                <p><span class="font-bold text-amber-400">1.</span> Esta guía es un documento de consulta exclusivamente para el proceso de auditoría interna.</p>
-                <p><span class="font-bold text-amber-400">2.</span> Queda prohibido modificar cualquier configuración sin seguir el protocolo de autorización establecido por el departamento de TI.</p>
+                <p><span class="font-bold text-white-400">Esta guía es un documento de consulta exclusivamente para el proceso de auditoría interna. Queda prohibido modificar cualquier configuración sin seguir el protocolo de autorización establecido por el departamento de TI.</p>
             </div>
         </footer>
     </div>
 
     <script>
-        const newPalette = {
-            background: 'rgba(56, 178, 172, 0.2)',
-            border: '#38B2AC',
-            accent1: '#38B2AC', 
-            accent2: '#F5A623',
-            red: '#E53E3E',
-            text: '#E2E8F0'
-        };
+        document.addEventListener('DOMContentLoaded', () => {
+            const newPalette = {
+                background: 'rgba(56, 178, 172, 0.2)',
+                border: '#38B2AC',
+                accent1: '#38B2AC',
+                accent2: '#F5A623',
+                red: '#E53E3E',
+                text: '#E2E8F0'
+            };
 
-        function wrapLabel(label) {
-            const maxLength = 16;
-            if (typeof label !== 'string' || label.length <= maxLength) {
-                return label;
-            }
-            const words = label.split(' ');
-            const lines = [];
-            let currentLine = '';
-            for (const word of words) {
-                if ((currentLine + ' ' + word).length > maxLength && currentLine.length > 0) {
-                    lines.push(currentLine);
-                    currentLine = word;
-                } else {
-                    currentLine = currentLine ? currentLine + ' ' + word : word;
+            function wrapLabel(label) {
+                const maxLength = 16;
+                if (typeof label !== 'string' || label.length <= maxLength) {
+                    return label;
                 }
-            }
-            if (currentLine) {
-                lines.push(currentLine);
-            }
-            return lines;
-        }
-
-        const tooltipTitleCallback = (tooltipItems) => {
-            const item = tooltipItems[0];
-            let label = item.chart.data.labels[item.dataIndex];
-            if (Array.isArray(label)) {
-                return label.join(' ');
-            }
-            return label;
-        };
-        
-        const commonChartOptions = {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    labels: {
-                        color: newPalette.text,
-                        font: {
-                            size: 14
-                        }
-                    }
-                },
-                tooltip: {
-                    callbacks: {
-                        title: tooltipTitleCallback
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                for (const word of words) {
+                    if ((currentLine + ' ' + word).trim().length > maxLength) {
+                        lines.push(currentLine.trim());
+                        currentLine = word;
+                    } else {
+                        currentLine += ' ' + word;
                     }
                 }
-            },
-            scales: {
-                y: {
-                    ticks: { color: newPalette.text },
-                    grid: { color: 'rgba(255, 255, 255, 0.1)' }
-                },
-                x: {
-                    ticks: { color: newPalette.text },
-                    grid: { color: 'rgba(255, 255, 255, 0.1)' }
-                }
+                lines.push(currentLine.trim());
+                return lines.filter(line => line.length > 0);
             }
-        };
 
-        const updateStatusCtx = document.getElementById('updateStatusChart').getContext('2d');
-        new Chart(updateStatusCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Importancia de las actualizaciones', 'Otros factores'],
-                datasets: [{
-                    label: 'Capacidad de detección',
-                    data: [99, 1],
-                    backgroundColor: [newPalette.border, 'rgba(255, 255, 255, 0.1)'],
-                    borderColor: [newPalette.border, 'rgba(255, 255, 255, 0.2)'],
-                    borderWidth: 1
-                }]
-            },
-            options: {
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                if (!item) return '';
+                let label = item.chart.data.labels[item.dataIndex];
+                return Array.isArray(label) ? label.join(' ') : label;
+            };
+
+            const commonChartOptions = {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
                     legend: {
-                        position: 'top',
                         labels: {
-                           color: newPalette.text,
-                           font: { size: 14 }
+                            color: newPalette.text,
+                            font: {
+                                size: 14
+                            }
                         }
                     },
                     tooltip: {
                         callbacks: {
-                           title: tooltipTitleCallback
+                            title: tooltipTitleCallback
                         }
                     }
+                },
+                scales: {
+                    y: {
+                        ticks: { color: newPalette.text },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                    },
+                    x: {
+                        ticks: { color: newPalette.text },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                    }
                 }
-            }
-        });
+            };
 
-        const alertFrequencyCtx = document.getElementById('alertFrequencyChart').getContext('2d');
-        new Chart(alertFrequencyCtx, {
-            type: 'bar',
-            data: {
-                labels: [
-                    wrapLabel('Amenaza eliminada (automático)'), 
-                    wrapLabel('Requiere decisión (atención)'), 
-                    wrapLabel('Error crítico (licencia, etc.)')
-                ],
-                datasets: [{
-                    label: 'Frecuencia relativa de alertas',
-                    data: [85, 14, 1],
-                    backgroundColor: [newPalette.accent1, newPalette.accent2, newPalette.red],
-                    borderColor: [newPalette.accent1, newPalette.accent2, newPalette.red],
-                    borderWidth: 1
-                }]
-            },
-            options: { ...commonChartOptions }
+            const updateStatusCanvas = document.getElementById('updateStatusChart');
+            if (updateStatusCanvas) {
+                new Chart(updateStatusCanvas.getContext('2d'), {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Importancia de las actualizaciones', 'Otros factores'],
+                        datasets: [{
+                            label: 'Capacidad de detección',
+                            data: [99, 1],
+                            backgroundColor: [newPalette.border, 'rgba(255, 255, 255, 0.1)'],
+                            borderColor: [newPalette.border, 'rgba(255, 255, 255, 0.2)'],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                                labels: {
+                                    color: newPalette.text,
+                                    font: { size: 14 }
+                                }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    title: tooltipTitleCallback
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            const alertFrequencyCanvas = document.getElementById('alertFrequencyChart');
+            if (alertFrequencyCanvas) {
+                new Chart(alertFrequencyCanvas.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: [
+                            wrapLabel('Amenaza eliminada (automático)'),
+                            wrapLabel('Requiere decisión (atención)'),
+                            wrapLabel('Error crítico (licencia, etc.)')
+                        ],
+                        datasets: [{
+                            label: 'Frecuencia relativa de alertas',
+                            data: [85, 14, 1],
+                            backgroundColor: [newPalette.accent1, newPalette.accent2, newPalette.red],
+                            borderColor: [newPalette.accent1, newPalette.accent2, newPalette.red],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: commonChartOptions
+                });
+            }
         });
     </script>
 </body>

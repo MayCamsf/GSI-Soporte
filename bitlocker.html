@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía de seguridad para equipos Windows</title>
+    <title>Guía de verificación de seguridad para equipos Windows</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,8 +22,12 @@
             background-color: #1A202C;
             border-left: 4px solid #4299E1;
         }
-        .warning {
-            background-color: #1A202C;
+        .pass {
+            background-color: #1C4532;
+            border-left: 4px solid #48BB78;
+        }
+        .fail {
+             background-color: #4A202C;
             border-left: 4px solid #F56565;
         }
     </style>
@@ -36,88 +40,86 @@
             <img src="logo.png" alt="Logo de la Empresa" class="w-56 h-auto" onerror="this.onerror=null;this.src='https://placehold.co/224x60/1A202C/FFFFFF?text=Logo+Aqui';">
         </div>
 
-        <h1 class="text-3xl md:text-4xl font-bold text-center text-white mb-4">Guía rápida de seguridad</h1>
-        <p class="text-center text-lg text-gray-400 mb-12">Revisa y ajusta la configuración de tu equipo Windows.</p>
+        <h1 class="text-3xl md:text-4xl font-bold text-center text-white mb-4">Verificación de cifrado de disco</h1>
+        <p class="text-center text-lg text-gray-400 mb-12">Protocolo para confirmar que la protección BitLocker está activa en los equipos de la empresa.</p>
 
         <div class="card rounded-xl shadow-lg p-6 md:p-8 mb-8">
             <div class="flex items-center mb-4">
-                <i class="ph-shield-lock text-3xl text-blue-400 mr-3"></i>
-                <h2 class="text-2xl font-bold text-white">Protección del disco duro (BitLocker)</h2>
+                <i class="ph-shield-check text-3xl text-blue-400 mr-3"></i>
+                <h2 class="text-2xl font-bold text-white">Verificación de cifrado de disco (BitLocker)</h2>
             </div>
             <p class="text-gray-300 mb-6">
-                BitLocker es una herramienta de cifrado que protege toda tu información. Funciona como una caja fuerte digital para los datos de tu computadora, evitando el acceso no autorizado en caso de pérdida o robo del equipo.
+                El objetivo de esta revisión es asegurar que todos los equipos de la empresa tengan el cifrado de disco BitLocker activado. Esto es fundamental para proteger la información corporativa y cumplir con las políticas de seguridad en caso de pérdida o robo de un dispositivo.
             </p>
 
-            <h3 class="text-xl font-semibold text-white mb-4">¿Cómo saber si tu disco está cifrado?</h3>
+            <h3 class="text-xl font-semibold text-white mb-4">Procedimiento de verificación</h3>
             
             <div class="mb-6">
-                <p class="font-bold text-lg text-gray-100">Método A: Desde el explorador de archivos (el más fácil)</p>
+                <p class="font-bold text-lg text-gray-100">Método A: Verificación visual en el explorador</p>
                 <ol class="list-decimal list-inside space-y-4 mt-3 text-gray-300 pl-4">
-                    <li>Abre el <strong>Explorador de archivos</strong>. Puedes hacerlo haciendo clic en el ícono de la carpeta amarilla que se encuentra en la barra de tareas.</li>
+                    <li>Abra el <strong>Explorador de archivos</strong> desde la barra de tareas.</li>
                     <div class="flex justify-center my-4"><img src="m.png" alt="Ejemplo del explorador de archivos" class="max-w-md rounded-lg shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/800x400/4A5568/A0AEC0?text=Paso+1:+Abrir+Explorador';"></div>
-                    <li>En el menú del lado izquierdo, busca y haz clic en la opción <strong>"Este equipo"</strong>.</li>
+                    <li>En el menú lateral, seleccione la opción <strong>"Este equipo"</strong>.</li>
                     <div class="flex justify-center my-4"><img src="za.png" alt="Ejemplo de la sección Este equipo" class="max-w-md rounded-lg shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/800x400/4A5568/A0AEC0?text=Paso+2:+Ir+a+Este+Equipo';"></div>
-                    <li>Busca tu disco principal, usualmente llamado <strong>Windows (C:)</strong>. Si ves un ícono de un <strong>candado</strong> sobre el disco (puede ser plateado o dorado, abierto o cerrado), significa que BitLocker está presente en esa unidad.</li>
+                    <li>Identifique el disco principal <strong>Windows (C:)</strong>.</li>
                     <div class="flex justify-center my-4"><img src="zaq.png" alt="Ejemplo de disco con candado de BitLocker" class="max-w-md rounded-lg shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/800x400/4A5568/A0AEC0?text=Paso+3:+Buscar+candado';"></div>
+                    <li class="pass p-4 rounded-lg">
+                        <strong class="font-bold text-green-300">Resultado esperado:</strong> El disco C: debe mostrar un ícono de <strong class="text-white">candado</strong> (abierto o cerrado, dorado o plateado). La presencia del candado confirma que BitLocker está gestionando la unidad.
+                    </li>
                 </ol>
             </div>
 
             <div class="mb-2">
-                <p class="font-bold text-lg text-gray-100">Método B: Usando una terminal (avanzado)</p>
-                <p class="text-gray-400 mb-4">Si el método anterior no te funciona o prefieres usar comandos, puedes utilizar PowerShell o el Símbolo del sistema (CMD).</p>
+                <p class="font-bold text-lg text-gray-100">Método B: Verificación por terminal</p>
+                <p class="text-gray-400 mb-4">Utilice este método para una confirmación técnica del estado del cifrado.</p>
                 
                 <p class="font-semibold text-md text-gray-200">Opción 1: PowerShell</p>
                 <ol class="list-decimal list-inside space-y-4 mt-3 text-gray-300 pl-4">
-                    <li>Haz clic derecho sobre el botón del menú Inicio de Windows y selecciona <strong>"Terminal"</strong> o <strong>"Windows PowerShell"</strong>.</li>
+                    <li>Haga clic derecho en el menú Inicio y seleccione <strong>"Terminal"</strong> o <strong>"Windows PowerShell"</strong>.</li>
                     <div class="flex justify-center my-4"><img src="power.png" alt="Ejemplo de cómo abrir PowerShell" class="max-w-md rounded-lg shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/800x400/4A5568/A0AEC0?text=Paso+1:+Abrir+PowerShell';"></div>
-                    <li>En la ventana azul o negra que aparece, escribe el siguiente comando y presiona Enter: <br><code class="bg-gray-900 text-green-300 p-1 rounded">Get-BitLockerVolume</code></li>
-                    <li>Observa la línea "Protection Status". Si dice <strong>"On"</strong>, el disco está protegido. Si dice <strong>"Off"</strong>, no lo está.</li>
-                    <div class="flex justify-center my-4"><img src="xs.png" alt="Ejemplo de resultado en PowerShell" class="max-w-md rounded-lg shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/800x400/4A5568/A0AEC0?text=Paso+3:+Verificar+estado';"></div>
+                    <li>En la terminal, ejecute el comando: <code class="bg-gray-900 text-green-300 p-1 rounded">Get-BitLockerVolume</code></li>
+                    <div class="flex justify-center my-4"><img src="xs.png" alt="Ejemplo de resultado en PowerShell" class="max-w-md rounded-lg shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/800x400/4A5568/A0AEC0?text=Paso+2:+Verificar+estado';"></div>
+                     <li class="pass p-4 rounded-lg">
+                        <strong class="font-bold text-green-300">Resultado esperado:</strong> Para el disco C:, el valor de "Protection Status" debe ser <strong class="text-white">"On"</strong>.
+                    </li>
                 </ol>
 
                 <p class="font-semibold text-md text-gray-200 mt-6">Opción 2: Símbolo del sistema (CMD)</p>
                  <ol class="list-decimal list-inside space-y-4 mt-3 text-gray-300 pl-4">
-                    <li>En la barra de búsqueda de Windows, escribe <strong>cmd</strong> y abre la aplicación <strong>"Símbolo del sistema"</strong>.</li>
+                    <li>En la búsqueda de Windows, escriba <strong>cmd</strong> y abra el <strong>"Símbolo del sistema"</strong>.</li>
                      <div class="flex justify-center my-4"><img src="cmdw.png" alt="Ejemplo de cómo abrir CMD" class="max-w-md rounded-lg shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/800x400/4A5568/A0AEC0?text=Paso+1:+Abrir+CMD';"></div>
-                    <li>Escribe el siguiente comando y presiona Enter: <br><code class="bg-gray-900 text-green-300 p-1 rounded">manage-bde -status</code></li>
-                    <li>Busca la sección de tu disco (C:) y revisa el "Estado de la protección". Si dice <strong>"La protección está activada"</strong>, está cifrado.</li>
-                     <div class="flex justify-center my-4"><img src="az.png" alt="Ejemplo de resultado en CMD" class="max-w-md rounded-lg shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/800x400/4A5568/A0AEC0?text=Paso+3:+Verificar+estado';"></div>
+                    <li>Ejecute el comando: <code class="bg-gray-900 text-green-300 p-1 rounded">manage-bde -status</code></li>
+                     <div class="flex justify-center my-4"><img src="az.png" alt="Ejemplo de resultado en CMD" class="max-w-md rounded-lg shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/800x400/4A5568/A0AEC0?text=Paso+2:+Verificar+estado';"></div>
+                     <li class="pass p-4 rounded-lg">
+                        <strong class="font-bold text-green-300">Resultado esperado:</strong> El "Estado de la protección" debe indicar: <strong class="text-white">"La protección está activada"</strong>.
+                    </li>
                 </ol>
             </div>
             
             <hr class="border-gray-600 my-8">
 
-            <h3 class="text-xl font-semibold text-white mb-4">¿Cómo se desactiva la protección?</h3>
-            
-            <div class="warning p-4 rounded-lg mb-5">
-                <div class="flex items-center">
-                    <i class="ph-warning-circle text-2xl text-red-400 mr-3"></i>
-                    <p class="text-red-200"><strong class="font-bold">¡Atención!</strong> Desactivar BitLocker es un riesgo de seguridad. Deja tu información vulnerable en caso de robo o pérdida del equipo. Realiza este proceso únicamente si es indispensable y cuentas con autorización.</p>
+            <h3 class="text-xl font-semibold text-white mb-4">Puntos clave</h3>
+            <div class="space-y-4">
+                <div class="note p-4 rounded-lg">
+                     <p class="text-blue-200"><strong class="font-bold">Equipo en estado ideal:</strong> El equipo cumple la política si BitLocker está activado y, además, el usuario no tiene permisos para desactivarlo. Para confirmar esto último, vaya a "Administrar BitLocker" y verifique que la opción "Desactivar BitLocker" esté en gris o no disponible.</p>
                 </div>
-            </div>
-
-            <ol class="list-decimal list-inside space-y-4 text-gray-300 pl-4">
-                <li>En la barra de búsqueda de Windows, escribe <strong>"Administrar BitLocker"</strong> y abre la aplicación.</li>
-                <div class="flex justify-center my-4"><img src="asq.png" alt="Ejemplo de búsqueda de Administrar BitLocker" class="max-w-md rounded-lg shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/800x400/4A5568/A0AEC0?text=Paso+1:+Buscar+BitLocker';"></div>
-                <li>Junto a la unidad C:, busca y haz clic en la opción <strong>"Desactivar BitLocker"</strong>.</li>
-                <div class="flex justify-center my-4"><img src="der.png" alt="Ejemplo de la opción Desactivar BitLocker" class="max-w-md rounded-lg shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/800x400/4A5568/A0AEC0?text=Paso+2:+Clic+en+Desactivar';"></div>
-                <li>El sistema te mostrará una ventana de confirmación. Lee el aviso y, si estás seguro, haz clic en "Desactivar BitLocker". El proceso de descifrado puede tardar varios minutos o incluso horas, dependiendo del tamaño del disco.</li>
-                <div class="flex justify-center my-4"><img src="desc.png" alt="Ejemplo de confirmación para desactivar" class="max-w-md rounded-lg shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/800x400/4A5568/A0AEC0?text=Paso+3:+Confirmar';"></div>
-            </ol>
-
-            <div class="note mt-8 p-4 rounded-lg">
-                 <p class="text-blue-200"><strong class="font-bold">Importante sobre los permisos:</strong> Si las opciones para activar o desactivar BitLocker no están disponibles o aparecen en gris, significa que la configuración es gestionada por la empresa. No podrás modificarla, ya que no cuentas con permisos de administrador para esta función.</p>
+                <div class="fail p-4 rounded-lg">
+                     <p class="text-red-200"><strong class="font-bold">Equipo no conforme:</strong> Un equipo no cumple con la política de seguridad si se presenta cualquiera de los siguientes casos:</p>
+                     <ul class="list-disc list-inside mt-2">
+                        <li>No aparece el ícono de candado en el disco C:.</li>
+                        <li>El estado de protección en la terminal es "Off" o "La protección está desactivada".</li>
+                     </ul>
+                     <p class="mt-2">Cualquier equipo en este estado debe ser reportado al departamento de TI para su remediación inmediata.</p>
+                </div>
             </div>
         </div>
     </div>
     
     <footer class="mt-20 text-center border-t border-gray-700 pt-10">
-            <h3 class="text-lg font-semibold text-white mb-4">Recuerda que:</h3>
+            <h3 class="text-lg font-semibold text-white mb-4">Recuerda que</h3>
             <div class="text-gray-400 max-w-2xl mx-auto space-y-2">
-                <p><span class="font-bold text-amber-400">1.</span> Esta guía es un documento de consulta exclusivamente para el proceso de auditoría interna.</p>
-                <p><span class="font-bold text-amber-400">2.</span> Queda prohibido modificar cualquier configuración sin seguir el protocolo de autorización establecido por el departamento de TI.</p>
+                <p><span class="font-bold text-white-400">Esta guía es un documento de consulta exclusivamente para el proceso de auditoría interna. Queda prohibido modificar cualquier configuración sin seguir el protocolo de autorización establecido por el departamento de TI.</p>
             </div>
         </footer>
-
 </body>
 </html>
